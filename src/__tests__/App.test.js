@@ -56,21 +56,21 @@ const AppWrapper = () => {
   )
 }
 
-// test 1
-it('App test 2: render app', () => {
+// test 1 (using render from @testing-library)
+it('App test 1: render app', () => {
     render(<AppWrapper/>);
     const AppEle = screen.getByTestId('App');   // attr in element: data-testid={`App`}
     expect(AppEle).toBeInTheDocument();
 })
 
 // test 2
-test('App test 1: hello', () => {
+test('App test 2: hello', () => {
   render(<App />);
   const linkElement = screen.getByText(/hello react/i);
   expect(linkElement).toBeInTheDocument();
 });
 
-// snapshot test
+// snapshot test (using react-test-renderer)
 test('App test: matches snapshot', () => {
   const tree = renderer.create(<AppWrapper/>).toJSON();
   expect(tree).toMatchSnapshot();   // failed，press ‘u’ to update. (jest -u)
