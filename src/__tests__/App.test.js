@@ -17,9 +17,6 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
  * All expect() matchers supported by Jest.
  * You can also use jest.fn() and expect(fn).toBeCalled() to create “spies” or mock functions
  *
- * ** test redux **
- * integration-style tests for redux
- *
  */
 
 
@@ -56,21 +53,24 @@ const AppWrapper = () => {
   )
 }
 
-// test 1 (using render from @testing-library)
+// test 1   (using render from @testing-library)
 it('App test 1: render app', () => {
     render(<AppWrapper/>);
     const AppEle = screen.getByTestId('App');   // attr in element: data-testid={`App`}
     expect(AppEle).toBeInTheDocument();
 })
 
-// test 2
+// test 2   (using render from @testing-library)
 test('App test 2: hello', () => {
   render(<App />);
   const linkElement = screen.getByText(/hello react/i);
   expect(linkElement).toBeInTheDocument();
 });
 
-// snapshot test (using react-test-renderer)
+
+/**
+ * snapshot test (using react-test-renderer)
+ */
 test('App test: matches snapshot', () => {
   const tree = renderer.create(<AppWrapper/>).toJSON();
   expect(tree).toMatchSnapshot();   // failed，press ‘u’ to update. (jest -u)
