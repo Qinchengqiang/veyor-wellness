@@ -86,7 +86,7 @@
       <updated>1628515681616</updated>
       <workItem from="1628515683094" duration="7700000" />
       <workItem from="1628928775739" duration="3188000" />
-      <workItem from="1629448140114" duration="1834000" />
+      <workItem from="1629448140114" duration="3083000" />
     </task>
     <task id="LOCAL-00001" summary="launching setting">
       <created>1628664594177</created>
@@ -130,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629437784290</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="use useSelector in index.js">
+      <created>1629785761196</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1629785761196</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +158,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="launching setting" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="use useSelector in index.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="use useSelector in index.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1628660742763">
@@ -174,10 +182,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1628662770497" />
-    <state x="2108" y="375" key="Vcs.Push.Dialog.v2" timestamp="1629437793268">
+    <state x="2108" y="375" key="Vcs.Push.Dialog.v2" timestamp="1629785776931">
       <screen x="1440" y="23" width="3008" height="1669" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1628666605017" />
-    <state x="2108" y="375" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.23.3008.1669@1440.23.3008.1669" timestamp="1629437793268" />
+    <state x="2108" y="375" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.23.3008.1669@1440.23.3008.1669" timestamp="1629785776931" />
+    <state x="2640" y="338" width="615" height="735" key="find.popup" timestamp="1629786604958">
+      <screen x="1440" y="23" width="3008" height="1669" />
+    </state>
+    <state x="2640" y="338" width="615" height="735" key="find.popup/0.23.1440.877/1440.23.3008.1669@1440.23.3008.1669" timestamp="1629786604958" />
   </component>
 </project>
