@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b49bd906-f9f3-4962-b326-f06bc73935ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +85,8 @@
       <option name="presentableId" value="Default" />
       <updated>1628515681616</updated>
       <workItem from="1628515683094" duration="7700000" />
-      <workItem from="1628928775739" duration="2693000" />
+      <workItem from="1628928775739" duration="3188000" />
+      <workItem from="1629448140114" duration="1834000" />
     </task>
     <task id="LOCAL-00001" summary="launching setting">
       <created>1628664594177</created>
@@ -123,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628666597529</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update">
+      <created>1629437784290</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1629437784290</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +150,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="launching setting" />
-    <option name="LAST_COMMIT_MESSAGE" value="launching setting" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1628660742763">
@@ -166,9 +174,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1628662770497" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1628666605017">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="2108" y="375" key="Vcs.Push.Dialog.v2" timestamp="1629437793268">
+      <screen x="1440" y="23" width="3008" height="1669" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1628666605017" />
+    <state x="2108" y="375" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.23.3008.1669@1440.23.3008.1669" timestamp="1629437793268" />
   </component>
 </project>
