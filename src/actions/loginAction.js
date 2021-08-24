@@ -1,5 +1,5 @@
 import setAxiosAuth from '../utils/setAxiosAuth';
-import {SET_CURRENT_USER} from '../constants/actionType';
+import {SET_CURRENT_USER } from '../constants/actionType';
 import {user, token} from '../constants/users';
 import axios from "axios";
 
