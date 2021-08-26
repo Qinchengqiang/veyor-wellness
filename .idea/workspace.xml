@@ -20,7 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b49bd906-f9f3-4962-b326-f06bc73935ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/icons/filter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/widgets/filterForm.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/widgets/input.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/filter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sampleForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/FilterForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/input.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/Header/icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +49,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/images/icons" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -46,16 +57,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/constants" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/__tests__" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/components/styles" />
       <recent name="$PROJECT_DIR$/src/components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/images/icons" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/constants" />
     </key>
   </component>
   <component name="RunManager">
@@ -85,7 +98,7 @@
       <updated>1628515681616</updated>
       <workItem from="1628515683094" duration="7700000" />
       <workItem from="1628928775739" duration="3188000" />
-      <workItem from="1629448140114" duration="6970000" />
+      <workItem from="1629448140114" duration="14083000" />
     </task>
     <task id="LOCAL-00001" summary="launching setting">
       <created>1628664594177</created>
@@ -150,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629791033356</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update">
+      <created>1629802859332</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1629802859332</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +196,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="3193" y="580" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1629802946353">
+      <screen x="1440" y="23" width="3008" height="1669" />
+    </state>
+    <state x="3193" y="580" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877/1440.23.3008.1669@1440.23.3008.1669" timestamp="1629802946353" />
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1628660742763">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -196,11 +220,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1628662770497" />
-    <state x="2108" y="375" key="Vcs.Push.Dialog.v2" timestamp="1629791041522">
+    <state x="2108" y="375" key="Vcs.Push.Dialog.v2" timestamp="1629802875463">
       <screen x="1440" y="23" width="3008" height="1669" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1628666605017" />
-    <state x="2108" y="375" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.23.3008.1669@1440.23.3008.1669" timestamp="1629791041522" />
+    <state x="2108" y="375" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.23.3008.1669@1440.23.3008.1669" timestamp="1629802875463" />
     <state x="2640" y="338" width="615" height="735" key="find.popup" timestamp="1629786604958">
       <screen x="1440" y="23" width="3008" height="1669" />
     </state>

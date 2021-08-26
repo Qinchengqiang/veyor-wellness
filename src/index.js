@@ -50,7 +50,7 @@ ReactDOM.render(
           <Router>
               {routes}
           </Router>
-      </Provider>,
+      </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
