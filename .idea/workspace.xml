@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b49bd906-f9f3-4962-b326-f06bc73935ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/__snapshots__/App.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/__snapshots__/App.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +93,7 @@
       <workItem from="1628928775739" duration="3188000" />
       <workItem from="1629448140114" duration="14432000" />
       <workItem from="1629955879731" duration="703000" />
-      <workItem from="1629963784351" duration="9473000" />
+      <workItem from="1629963784351" duration="9754000" />
     </task>
     <task id="LOCAL-00001" summary="launching setting">
       <created>1628664594177</created>
@@ -188,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630308625503</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update jest test">
+      <created>1630309252658</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1630309252658</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +219,8 @@
     <MESSAGE value="adding widgets" />
     <MESSAGE value="redux-saga" />
     <MESSAGE value="redux-saga update" />
-    <option name="LAST_COMMIT_MESSAGE" value="redux-saga update" />
+    <MESSAGE value="update jest test" />
+    <option name="LAST_COMMIT_MESSAGE" value="update jest test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-894" y="745" key="#ESLint" timestamp="1630303847935">
@@ -245,10 +251,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1628662770497" />
-    <state x="-2340" y="357" key="Vcs.Push.Dialog.v2" timestamp="1630308635399">
+    <state x="-2340" y="357" key="Vcs.Push.Dialog.v2" timestamp="1630309260833">
       <screen x="-3008" y="0" width="3008" height="1692" />
     </state>
-    <state x="-2340" y="357" key="Vcs.Push.Dialog.v2/0.0.1440.900/-3008.0.3008.1692@-3008.0.3008.1692" timestamp="1630308635399" />
+    <state x="-2340" y="357" key="Vcs.Push.Dialog.v2/0.0.1440.900/-3008.0.3008.1692@-3008.0.3008.1692" timestamp="1630309260833" />
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1628666605017" />
     <state x="2108" y="375" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.23.3008.1669@1440.23.3008.1669" timestamp="1629955172186" />
     <state x="-1808" y="319" width="615" height="746" key="find.popup" timestamp="1630307401014">

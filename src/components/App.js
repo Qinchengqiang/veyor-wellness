@@ -1,9 +1,9 @@
 import '../assets/styles/App.scss';
-import { useSelector, useDispatch, shallowEqual } from "react-redux";
-import { doLogin } from '../actions/loginAction';
+import {useSelector, useDispatch, shallowEqual} from "react-redux";
+import {doLogin} from '../actions/loginAction';
 import loadable from "@loadable/component";
-import { useEffect, useState } from "react";
-import { fetchUser } from '../actions/fetchList';
+import {useEffect, useState} from "react";
+import {fetchUser} from '../actions/fetchList';
 
 const Form = loadable(() => import('./sampleForm'));
 const Filter = loadable(() => import('./filter'));
@@ -13,7 +13,7 @@ function App() {
     const dispatch = useDispatch();
 
     // user state in redux
-    const { isFetching, result, data } = useSelector(state => state.fetchList, shallowEqual);
+    const {isFetching, result, data} = useSelector(state => state.fetchList, shallowEqual);
     const [listData, setListData] = useState('');
 
     useEffect(() => {
@@ -24,12 +24,10 @@ function App() {
         } else {
             setListData(result && data && data.data[0].name)
         }
-    },[isFetching, result, data])
+    }, [isFetching, result, data])
 
-    return (
-        <div className="App container d-flex flex-column align-items-center" data-testid={`App`}>
-            <h3>SPA</h3>
-
+    const sample = (
+        <>
             {authRedux.isAuthenticated ?
                 <h4>{authRedux.user.username}</h4>
                 :
@@ -53,9 +51,17 @@ function App() {
             {/* with thunk */}
             {/*<button onClick={()=>dispatch(fetchList())}>fetch users</button>    */}
             {/* with saga */}
-            <button onClick={()=>dispatch(fetchUser())}>fetch users</button>
+            <button onClick={() => dispatch(fetchUser())}>fetch users</button>
             <p>{listData}</p>
+        </>
+    );
 
+    return (
+        <div className="App container d-flex flex-column align-items-center" data-testid={`App`}>
+
+            <h3>SPA</h3>
+
+            {sample}
         </div>
     );
 }
