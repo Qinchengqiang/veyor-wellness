@@ -17,13 +17,9 @@ function App() {
     const [listData, setListData] = useState('');
 
     useEffect(() => {
-        if (result === false) {
-            setListData(data.message);
-        } else if (isFetching) {
-            setListData("Loading...")
-        } else {
-            setListData(result && data && data.data[0].name)
-        }
+        if (result === false) setListData(data.message)
+        else if (isFetching) setListData("Loading...")
+        else setListData(result && data && data.data[0].name)
     }, [isFetching, result, data])
 
     const sample = (
