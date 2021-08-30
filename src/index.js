@@ -6,32 +6,53 @@ import axios from "axios";
 import {user} from "./constants/users";
 import {setCurrentUser} from "./actions/loginAction";
 import setAxiosAuth from "./utils/setAxiosAuth";
+
 // bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery';
 import "popper.js";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 // font
 import '@fontsource/roboto';
+
 // dev tools
 import logger from 'redux-logger';
 import {composeWithDevTools} from "redux-devtools-extension";
-import thunk from 'redux-thunk';
+
 // redux
 import {createStore, applyMiddleware} from "redux";
 import rootReducer from './reducers';
 import {Provider} from "react-redux";
+// import thunk from 'redux-thunk';
+
+// redux-saga
+import createSagaMiddleware from 'redux-saga';
+import rootSage from './sagas';
+
 // router
 import {BrowserRouter as Router} from "react-router-dom";
 import routes from './routes';
 
-// createStore
+// setting redux-sagas
+const sagaMiddleware = createSagaMiddleware();
+
+/** createStore with thunk */
+// const store = createStore(
+//     rootReducer,
+//     composeWithDevTools(
+//         applyMiddleware(thunk, logger)
+//     )
+// );
+
+/** createStore with saga */
 const store = createStore(
     rootReducer,
     composeWithDevTools(
-        applyMiddleware(thunk, logger)
+        applyMiddleware(sagaMiddleware, logger)
     )
 );
+sagaMiddleware.run(rootSage);
 
 // axios default baseURL
 if (process.env.NODE_ENV === "production") {

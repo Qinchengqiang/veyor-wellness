@@ -1,4 +1,4 @@
-import {SET_CURRENT_USER} from '../constants/actionType';
+import { SET_CURRENT_USER } from '../constants/actionType';
 import _ from "lodash";
 
 const initState = {
@@ -12,7 +12,7 @@ const auth = (state = initState, action = {}) => {
             return {
                 isAuthenticated: !_.isEmpty(action.user),
                 user: action.user
-            }
+            };
         default:
             return state;
     }
