@@ -2,11 +2,29 @@
 
 exports[`App test: matches snapshot 1`] = `
 <div
-  className="App"
+  className="App container d-flex flex-column align-items-center"
   data-testid="App"
 >
   <h3>
-    hello react!
+    SPA
   </h3>
+  <p>
+    <button
+      onClick={[Function]}
+    >
+      login
+    </button>
+  </p>
+  <br />
+  <br />
+  <br />
+  <button
+    onClick={[Function]}
+  >
+    fetch users
+  </button>
+  <p>
+    
+  </p>
 </div>
 `;

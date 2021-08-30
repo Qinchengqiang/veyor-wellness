@@ -5,10 +5,12 @@ import App from '../components/App';
 import {applyMiddleware, createStore} from "redux";
 import rootReducer from "../reducers";
 import {composeWithDevTools} from "redux-devtools-extension";
-import thunk from "redux-thunk";
+// import thunk from "redux-thunk";
 import logger from "redux-logger";
 import {Provider} from "react-redux";
 import {BrowserRouter as Router, Route} from "react-router-dom";
+import createSagaMiddleware from 'redux-saga';
+import rootSage from '../sagas';
 
 /**
  * add it() or test() blocks with the name of the test and its code;
@@ -26,12 +28,22 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 
 /** must wrap the app component as we use redux */
 const AppWrapper = () => {
+    // const store = createStore(
+    //     rootReducer,
+    //     composeWithDevTools(
+    //         applyMiddleware(thunk, logger)
+    //     )
+    // );
+
+    /** saga */
+    const sagaMiddleware = createSagaMiddleware();
     const store = createStore(
         rootReducer,
         composeWithDevTools(
-            applyMiddleware(thunk, logger)
+            applyMiddleware(sagaMiddleware, logger)
         )
     );
+    sagaMiddleware.run(rootSage);
 
     const routes = (
         <>
@@ -70,9 +82,9 @@ describe('App group:', () => {
     })
 
     // test 2   (using render from @testing-library)
-    test('App test 2: hello', () => {
-        render(<App/>);
-        const linkElement = screen.getByText(/hello react/i);
+    test('App test 2: SPA', () => {
+        render(<AppWrapper/>);
+        const linkElement = screen.getByText(/SPA/i);
         expect(linkElement).toBeInTheDocument();
     });
 })

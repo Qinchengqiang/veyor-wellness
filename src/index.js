@@ -34,8 +34,7 @@ import rootSage from './sagas';
 import {BrowserRouter as Router} from "react-router-dom";
 import routes from './routes';
 
-// setting redux-sagas
-const sagaMiddleware = createSagaMiddleware();
+
 
 /** createStore with thunk */
 // const store = createStore(
@@ -46,6 +45,7 @@ const sagaMiddleware = createSagaMiddleware();
 // );
 
 /** createStore with saga */
+const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
     rootReducer,
     composeWithDevTools(
