@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b49bd906-f9f3-4962-b326-f06bc73935ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/checkSnippets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/snippets/stringSnippets.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/checkSnippets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/snippets/checkSnippets.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,18 +52,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/__tests__" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/components/styles" />
-      <recent name="$PROJECT_DIR$/src/components" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/images/icons" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/constants" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/utils/snippets" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/__tests__" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/components/styles" />
     </key>
   </component>
   <component name="RunManager">
@@ -94,6 +96,7 @@
       <workItem from="1629448140114" duration="14432000" />
       <workItem from="1629955879731" duration="703000" />
       <workItem from="1629963784351" duration="11480000" />
+      <workItem from="1630378507680" duration="8971000" />
     </task>
     <task id="LOCAL-00001" summary="launching setting">
       <created>1628664594177</created>
@@ -234,7 +237,8 @@
     <MESSAGE value="redux-saga update" />
     <MESSAGE value="update jest test" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="add snippets" />
+    <option name="LAST_COMMIT_MESSAGE" value="add snippets" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-894" y="745" key="#ESLint" timestamp="1630303847935">

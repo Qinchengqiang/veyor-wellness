@@ -4,6 +4,7 @@ import {doLogin} from '../actions/loginAction';
 import loadable from "@loadable/component";
 import {useEffect, useState} from "react";
 import {fetchUser} from '../actions/fetchList';
+import * as _s from '../utils/snippets/stringSnippets';
 
 const Form = loadable(() => import('./sampleForm'));
 const Filter = loadable(() => import('./filter'));
@@ -49,6 +50,12 @@ function App() {
             {/* with saga */}
             <button onClick={() => dispatch(fetchUser())}>fetch users</button>
             <p>{listData}</p>
+
+            <br/>
+            {_s.isIncludeCharacters('ab_08c', 'ac') ? <p>true</p> : <p>false</p>}
+            {_s.isIncludeSubString('abc', 'ab') ? <p>true</p> : <p>false</p>}
+            {_s.isOnlyDigital('123') ? <p>true</p> : <p>false</p>}
+
         </>
     );
 
