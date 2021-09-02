@@ -36,7 +36,7 @@ TODO: Fill out this long description.
 
 ## Maintainers
 
-[@Steven Qin](https://github.com/Steven Qin)
+[@Steven Qin](https://github.com/Qinchengqiang)
 
 ## Contributing
 
