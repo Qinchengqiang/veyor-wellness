@@ -40,7 +40,7 @@ export const isStartWith = (string, start) => string.startsWith(start);
 export const isEndWith = (string, end) => string.endsWith(end);
 
 // string includes at least one SPECIAL Characters:  !@#$%^&*()-+
-// export const isIncludeSpecial = (string) => /[\\!@#\\$%^&\\*\\(\\)\-\\+]/.test(string);
+export const isIncludeSpecial = (string) => testString(string, `[!@#$%^&*()-+]`);
 
 
 /**
@@ -84,3 +84,9 @@ export const replaceSubstringByRegExp = (string, regExp, newSub) => string.repla
 export const concatTwoString = (str1, str2) => str1.concat(str2);
 export const concatRepeatWithNum = (string, num) => string.repeat(num);
 
+// get integer substring from a string
+export const getIntegerSubstringList = (str) => str.match(/\d+/g);   // return [ subStr1, subStr2, ... ]
+export const getIntegerSubstring = (str) => str.match(/\d+/)[0];    // return subStr1
+
+// integer string (no +/- at beginning) --> integer
+export const stringToInteger = (str) => parseInt(str);
