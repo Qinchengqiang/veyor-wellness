@@ -1,8 +1,9 @@
 import '../assets/styles/App.scss';
 import {shallowEqual, useDispatch, useSelector} from "react-redux";
 import {doLogin} from "../actions/loginAction";
+import loadable from "@loadable/component";
 
-// import loadable from "@loadable/component";
+const BookingPage = loadable(() => import('./bookingSystem/bookingPage'));
 
 function App() {
     const authRedux = useSelector(state => state.auth, shallowEqual)
@@ -20,10 +21,8 @@ function App() {
         </>);
 
     return (
-        <div className="App container d-flex flex-column align-items-center" data-testid={`App`}>
-
-            <h3>SPA</h3>
-
+        <div className="App h-100 container d-flex flex-column align-items-center" data-testid={`App`}>
+            <BookingPage/>
         </div>
     );
 }

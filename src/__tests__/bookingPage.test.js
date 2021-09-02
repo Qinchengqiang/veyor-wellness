@@ -1,7 +1,7 @@
 import {cleanup, render, screen} from '@testing-library/react';  // testing-library
 import renderer from 'react-test-renderer';
 import React from 'react';
-import App from '../components/App';
+import BookingPage from "../components/bookingSystem/bookingPage";
 import {applyMiddleware, createStore} from "redux";
 import rootReducer from "../reducers";
 import {composeWithDevTools} from "redux-devtools-extension";
@@ -10,25 +10,23 @@ import {Provider} from "react-redux";
 import createSagaMiddleware from 'redux-saga';
 import rootSage from '../sagas';
 
-
-/** must wrap the app component since the redux */
 const AppWrapper = () => {
 
     /** saga */
-    const sagaMiddleware = createSagaMiddleware();
-    const store = createStore(
-        rootReducer,
-        composeWithDevTools(
-            applyMiddleware(sagaMiddleware, logger)
-        )
-    );
-    sagaMiddleware.run(rootSage);
+    // const sagaMiddleware = createSagaMiddleware();
+    // const store = createStore(
+    //     rootReducer,
+    //     composeWithDevTools(
+    //         applyMiddleware(sagaMiddleware, logger)
+    //     )
+    // );
+    // sagaMiddleware.run(rootSage);
 
 
     return (
-        <Provider store={store}>
-            <App/>
-        </Provider>
+        // <Provider store={store}>
+            <BookingPage/>
+        // </Provider>
     )
 }
 
@@ -38,11 +36,19 @@ afterEach(() => {
 
 describe('App group:', () => {
     // test 1
-    it('App test 1: render app', () => {
+    it('App test 1: render booking page', () => {
         render(<AppWrapper/>);
-        const AppEle = screen.getByTestId('App');
-        expect(AppEle).toBeInTheDocument();
+        const BookEle = screen.getByTestId('Booking');
+        expect(BookEle).toBeInTheDocument();
     })
+
+    // test 2
+    test('App test 2: title', () => {
+        render(<AppWrapper/>);
+        const linkElement = screen.getByText(/Book a wellness session/i);
+        expect(linkElement).toBeInTheDocument();
+    });
+
 })
 
 
@@ -53,4 +59,3 @@ test('App test: matches snapshot', () => {
     const tree = renderer.create(<AppWrapper/>).toJSON();
     expect(tree).toMatchSnapshot();                 // failed，press ‘u’ to update. (jest -u)
 })
-

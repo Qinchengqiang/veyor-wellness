@@ -4,9 +4,5 @@ exports[`App test: matches snapshot 1`] = `
 <div
   className="App container d-flex flex-column align-items-center"
   data-testid="App"
->
-  <h3>
-    SPA
-  </h3>
-</div>
+/>
 `;

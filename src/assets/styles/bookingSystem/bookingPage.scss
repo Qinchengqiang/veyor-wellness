@@ -1,0 +1,129 @@
+
+.booking {
+  max-width: 690px;
+
+  h1 {
+    margin-top: 5rem;
+    font-size: 4rem;
+
+    @media (max-width: 575.98px) {
+      margin-top: 3rem;
+      font-size: 2.3rem;
+    }
+    @media (max-width: 991.98px) and (min-width: 576px) {
+      font-size: 3rem;
+    }
+  }
+
+  p {
+    color: #5f5f5f;
+  }
+
+  .tabs {
+    width: 100%;
+
+    .tab {
+      cursor: pointer;
+      width: 33.33% !important;
+      border: 1px solid #d9d9d9;
+      color: #5f5f5f;
+      font-size: smaller;
+      background-color: #f1f1f1;
+
+      &:hover {
+        background-color: #FFFFFF;
+        font-weight: bolder;
+
+        .tabTriangle {
+          border-color: transparent transparent #d9d9d9;
+          font-weight: bolder;
+
+          &::before {
+            border-color: transparent transparent #FFFFFF;
+          }
+        }
+      }
+
+      &:active {
+        background-color: #FFFFFF;
+        font-weight: bolder;
+
+        .tabTriangle {
+          border-color: transparent transparent #d9d9d9;
+
+          &::before {
+            border-color: transparent transparent #FFFFFF;
+          }
+        }
+      }
+
+      .paddingLeft {
+        padding-left: 15px;
+      }
+      .tabLeft {
+        width: calc(100% - 19px);
+        padding-right: 5px;
+        margin-right: -19px;
+        @media (max-width: 369.98px) {
+          font-size: 0.7rem;
+        }
+        @media (max-width: 369.98px) {
+          height: 32px;
+        }
+        @media (min-width: 367px) and (max-width: 767.98px) {
+          height: 38px;
+        }
+      }
+
+      .tabTriangle {
+        cursor: pointer;
+        position: relative;
+        width: 0;
+        height: 0;
+        left: 28px;
+        top: -0.6rem;
+        border-style: solid;
+        border-width: 0 19px 19px;
+        border-color: transparent transparent #d9d9d9;
+        transform-origin: bottom center;
+        transform: rotateZ(90deg);
+
+        &::before {
+          content: '';
+          border-style: solid;
+          border-width: 0 19px 19px;
+          border-color: transparent transparent #f1f1f1;
+          position: absolute;
+          top: 1px;
+          left: -19px;
+        }
+      }
+    }
+
+    .border-left-0 {
+      border-left: 0 !important;
+    }
+
+    .border-right-0 {
+      border-right: 0 !important;
+    }
+
+    .border-left-radius3 {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+
+    .border-right-radius3 {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+
+    .zIndex2 {
+      z-index: 2;
+    }
+
+    .zIndex1 {
+      z-index: 1;
+    }
+  }
+}
