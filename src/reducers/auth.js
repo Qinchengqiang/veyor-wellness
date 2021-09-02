@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER } from '../constants/actionType';
+import { SET_CURRENT_USER } from '../constants/redux';
 import _ from "lodash";
 
 const initState = {

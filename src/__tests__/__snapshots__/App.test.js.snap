@@ -8,23 +8,5 @@ exports[`App test: matches snapshot 1`] = `
   <h3>
     SPA
   </h3>
-  <p>
-    <button
-      onClick={[Function]}
-    >
-      login
-    </button>
-  </p>
-  <br />
-  <br />
-  <br />
-  <button
-    onClick={[Function]}
-  >
-    fetch users
-  </button>
-  <p>
-    
-  </p>
 </div>
 `;

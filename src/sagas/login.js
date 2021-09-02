@@ -1,5 +1,5 @@
 import {takeEvery, call, put} from 'redux-saga/effects';
-import {SET_USER_REQUEST, SET_CURRENT_USER} from '../constants/actionType';
+import {SET_USER_REQUEST, SET_CURRENT_USER} from '../constants/redux';
 import {token, user} from "../constants/users";
 import setAxiosAuth from "../utils/setAxiosAuth";
 import axios from "axios";

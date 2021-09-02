@@ -3,7 +3,7 @@ import debounce from "lodash.debounce";
 import PropTypes from 'prop-types';
 import classname from "classnames";
 import _ from 'lodash';
-import '../assets/styles/widgets/input.scss';
+import '../../assets/styles/widgets/input.scss';
 
 const ModalInput = ({setInput, errors, setErrors}) => {
     const [value, setValue] = useState('');

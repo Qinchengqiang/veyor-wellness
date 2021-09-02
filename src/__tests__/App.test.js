@@ -5,35 +5,15 @@ import App from '../components/App';
 import {applyMiddleware, createStore} from "redux";
 import rootReducer from "../reducers";
 import {composeWithDevTools} from "redux-devtools-extension";
-// import thunk from "redux-thunk";
 import logger from "redux-logger";
 import {Provider} from "react-redux";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import createSagaMiddleware from 'redux-saga';
 import rootSage from '../sagas';
 
-/**
- * add it() or test() blocks with the name of the test and its code;
- *
- * You may optionally wrap them in describe() blocks for logical grouping;
- *
- * Jest provides a built-in expect() global function for making assertions;
- *
- * All expect() matchers supported by Jest.
- *
- * You can also use jest.fn() and expect(fn).toBeCalled() to create “spies” or mock functions
- *
- */
 
-
-/** must wrap the app component as we use redux */
+/** must wrap the app component since the redux */
 const AppWrapper = () => {
-    // const store = createStore(
-    //     rootReducer,
-    //     composeWithDevTools(
-    //         applyMiddleware(thunk, logger)
-    //     )
-    // );
 
     /** saga */
     const sagaMiddleware = createSagaMiddleware();
@@ -50,11 +30,7 @@ const AppWrapper = () => {
             <Route exact path="/" component={App}/>
         </>);
 
-    // axios default baseURL
-    // if (process.env.NODE_ENV === "production") {
-    //     axios.defaults.baseURL = "https://interview-web-service.mountainpass.com.au/";
-    // }
-    //
+
     // if (localStorage.jwtToken) {
     //     setAxiosAuth(user);
     //     store.dispatch(setCurrentUser(user))    // keep login status after re-loading page
@@ -74,14 +50,14 @@ afterEach(() => {
 });
 
 describe('App group:', () => {
-    // test 1   (using render from @testing-library)
+    // test 1
     it('App test 1: render app', () => {
         render(<AppWrapper/>);
         const AppEle = screen.getByTestId('App');   // attr in element: data-testid={`App`}
         expect(AppEle).toBeInTheDocument();
     })
 
-    // test 2   (using render from @testing-library)
+    // test 2
     test('App test 2: SPA', () => {
         render(<AppWrapper/>);
         const linkElement = screen.getByText(/SPA/i);
@@ -95,6 +71,6 @@ describe('App group:', () => {
  */
 test('App test: matches snapshot', () => {
     const tree = renderer.create(<AppWrapper/>).toJSON();
-    expect(tree).toMatchSnapshot();   // failed，press ‘u’ to update. (jest -u)
+    expect(tree).toMatchSnapshot();                 // failed，press ‘u’ to update. (jest -u)
 })
 

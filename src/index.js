@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import axios from "axios";
-import {user} from "./constants/users";
-import {setCurrentUser} from "./actions/loginAction";
-import setAxiosAuth from "./utils/setAxiosAuth";
+// import {user} from "./constants/users";
+// import {setCurrentUser} from "./actions/loginAction";
+// import setAxiosAuth from "./utils/setAxiosAuth";
 
 // bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,7 +23,6 @@ import {composeWithDevTools} from "redux-devtools-extension";
 import {createStore, applyMiddleware} from "redux";
 import rootReducer from './reducers';
 import {Provider} from "react-redux";
-// import thunk from 'redux-thunk';
 
 // redux-saga
 import createSagaMiddleware from 'redux-saga';
@@ -33,16 +31,6 @@ import rootSage from './sagas';
 // router
 import {BrowserRouter as Router} from "react-router-dom";
 import routes from './routes';
-
-
-
-/** createStore with thunk */
-// const store = createStore(
-//     rootReducer,
-//     composeWithDevTools(
-//         applyMiddleware(thunk, logger)
-//     )
-// );
 
 /** createStore with saga */
 const sagaMiddleware = createSagaMiddleware();
@@ -54,16 +42,12 @@ const store = createStore(
 );
 sagaMiddleware.run(rootSage);
 
-// axios default baseURL
-if (process.env.NODE_ENV === "production") {
-    axios.defaults.baseURL = "";
-}
 
 // jwt token setting with initial user info from /constants/users.js
-if (localStorage.jwtToken) {
-    setAxiosAuth(user);
-    store.dispatch(setCurrentUser(user));
-}
+// if (localStorage.jwtToken) {
+//     setAxiosAuth(user);
+//     store.dispatch(setCurrentUser(user));
+// }
 
 ReactDOM.render(
   <React.StrictMode>
