@@ -54,7 +54,7 @@ const BookingPage = () => {
     );
 
     return (
-        <div className='booking h-100 d-flex flex-column align-items-center'>
+        <div className='booking h-100 d-flex flex-column align-items-center justify-content-center'>
             <h1 data-testid={`Booking`}>Book a wellness session.</h1>
             <p className='mt-4'>Visit one of our expert consultant to get yourself feeling 100% again.</p>
 

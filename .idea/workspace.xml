@@ -11,22 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b49bd906-f9f3-4962-b326-f06bc73935ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/bookingSystem/chooseStep.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/bookingSystem/confirmStep.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/bookingSystem/infoStep.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/bookingSystem/chooseStep.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/bookingSystem/confirmStep.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/bookingSystem/infoStep.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mock/src/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/mock/src/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/__snapshots__/App.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/__snapshots__/App.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/__snapshots__/bookingPage.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/__snapshots__/bookingPage.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/bookingPage.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/bookingPage.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/styles/bookingSystem/bookingPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/bookingSystem/bookingPage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/widgets/input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/widgets/input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/bookingSystem/chooseStep.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/bookingSystem/chooseStep.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/bookingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/bookingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/widgets/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/chooseStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/chooseStep.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +92,7 @@
       <workItem from="1629955879731" duration="703000" />
       <workItem from="1629963784351" duration="11480000" />
       <workItem from="1630378507680" duration="11976000" />
-      <workItem from="1630544539093" duration="43530000" />
+      <workItem from="1630544539093" duration="55626000" />
     </task>
     <task id="LOCAL-00001" summary="launching setting">
       <created>1628664594177</created>
@@ -256,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630570949080</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="multiple steps form and info input">
+      <created>1630628495407</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1630628495408</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +287,8 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="setting mock" />
     <MESSAGE value="booking step tabs" />
-    <option name="LAST_COMMIT_MESSAGE" value="booking step tabs" />
+    <MESSAGE value="multiple steps form and info input" />
+    <option name="LAST_COMMIT_MESSAGE" value="multiple steps form and info input" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-894" y="745" key="#ESLint" timestamp="1630303847935">
