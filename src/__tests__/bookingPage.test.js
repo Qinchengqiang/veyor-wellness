@@ -16,7 +16,7 @@ afterEach(() => {
 
 describe('App group:', () => {
     // test 1
-    it('App test 1: render booking page', () => {
+    it('App test 1: render newBooking page', () => {
         render(<AppWrapper/>);
         const BookEle = screen.getByTestId('Booking');
         expect(BookEle).toBeInTheDocument();

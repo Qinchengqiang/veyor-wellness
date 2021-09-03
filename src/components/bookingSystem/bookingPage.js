@@ -1,24 +1,46 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../../assets/styles/bookingSystem/bookingPage.scss';
 import loadable from "@loadable/component";
 import classname from "classnames";
+import {getAppointments} from '../../actions/appointmentsAction';
+import {getAllBookings} from '../../actions/bookingAction';
+import {useDispatch} from "react-redux";
+
 
 const ChooseStep = loadable(() => import('./chooseStep'));
 const InfoStep = loadable(() => import('./infoStep'));
 const ConfirmStep = loadable(() => import('./confirmStep'));
+
 
 const _next = (currentStep, setCurrentStep) => {
     let nextStep = currentStep >= 2 ? 3 : currentStep + 1;
     setCurrentStep(nextStep);
 }
 
+
 const _prev = (currentStep, setCurrentStep) => {
     let preStep = currentStep <= 1 ? 1 : currentStep - 1
     setCurrentStep(preStep);
 }
 
+
 const BookingPage = () => {
     const [currentStep, setCurrentStep] = useState(1);
+    const dispatch = useDispatch();
+
+    // initialise appointments & allBookings at redux
+    useEffect(() => {
+        dispatch(getAppointments());
+        dispatch(getAllBookings());
+        // eslint-disable-next-line
+    }, [])
+
+    // update appointment every 10 min
+    useEffect(() => {
+        const interval = setInterval(() => dispatch(getAppointments()), 1000 * 60 * 10);
+        return () => clearInterval(interval);
+        // eslint-disable-next-line
+    }, [])
 
     const tabs = (
         <div className='tabs mt-4 d-flex flex-row align-items-stretch'>
@@ -34,18 +56,22 @@ const BookingPage = () => {
                 <div className='tabTriangle'/>
             </div>
 
-            <div className={classname('tab h-100 p-2 d-flex flex-row align-items-center border-left-0 border-right-radius3',
-            {' tab-active': currentStep === 3})}>
+            <div
+                className={classname('tab h-100 p-2 d-flex flex-row align-items-center border-left-0 border-right-radius3',
+                    {' tab-active': currentStep === 3})}>
                 <div className='tabLeft paddingLeft'>Confirmation</div>
             </div>
 
         </div>
     )
+
     const booking = (
         <>
             <p>Step {currentStep} </p>
 
-            <form onSubmit={() => {console.log('submit')}}>
+            <form onSubmit={() => {
+                console.log('submit')
+            }}>
                 <ChooseStep currentStep={currentStep} setCurrentStep={setCurrentStep} next={_next}/>
                 <InfoStep currentStep={currentStep} setCurrentStep={setCurrentStep} next={_next} prev={_prev}/>
                 <ConfirmStep currentStep={currentStep} setCurrentStep={setCurrentStep} next={_next} prev={_prev}/>

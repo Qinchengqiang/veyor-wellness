@@ -2,7 +2,7 @@
 
 exports[`App test: matches snapshot 1`] = `
 <div
-  className="booking h-100 d-flex flex-column align-items-center"
+  className="newBooking h-100 d-flex flex-column align-items-center"
 >
   <h1
     data-testid="Booking"
