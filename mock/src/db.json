@@ -1,16 +1,27 @@
 {
+  "appointments": [
+    {
+      "name": "Physiotherapy",
+      "price": "$45.00"
+    },
+    {
+      "name": "Chiro",
+      "price": "$100.00"
+    },
+    {
+      "name": "Aroma Therapy",
+      "price": "$45.00"
+    }
+  ],
   "booking": [
     {
-      "id": 1,
-      "customer_name": "John"
-    },
-    {
-      "id": 2,
-      "customer_name": "Jane"
-    },
-    {
-      "id": 3,
-      "customer_name": "Ohaya"
+      "appointment": "Physiotherapy",
+      "date": "",
+      "Time": "",
+      "firstname": "John",
+      "lastname": "Wang",
+      "phone": "000-123456",
+      "email": "xxx@xxx.com"
     }
   ]
 }

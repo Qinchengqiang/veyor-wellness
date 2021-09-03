@@ -2,31 +2,11 @@ import {cleanup, render, screen} from '@testing-library/react';  // testing-libr
 import renderer from 'react-test-renderer';
 import React from 'react';
 import BookingPage from "../components/bookingSystem/bookingPage";
-import {applyMiddleware, createStore} from "redux";
-import rootReducer from "../reducers";
-import {composeWithDevTools} from "redux-devtools-extension";
-import logger from "redux-logger";
-import {Provider} from "react-redux";
-import createSagaMiddleware from 'redux-saga';
-import rootSage from '../sagas';
 
 const AppWrapper = () => {
 
-    /** saga */
-    // const sagaMiddleware = createSagaMiddleware();
-    // const store = createStore(
-    //     rootReducer,
-    //     composeWithDevTools(
-    //         applyMiddleware(sagaMiddleware, logger)
-    //     )
-    // );
-    // sagaMiddleware.run(rootSage);
-
-
     return (
-        // <Provider store={store}>
-            <BookingPage/>
-        // </Provider>
+        <BookingPage/>
     )
 }
 

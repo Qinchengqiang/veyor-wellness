@@ -1,17 +1,15 @@
-import React, {useMemo, useState} from "react";
+import React, {useMemo} from "react";
 import debounce from "lodash.debounce";
 import PropTypes from 'prop-types';
 import classname from "classnames";
-import _ from 'lodash';
+// import _ from 'lodash';
 import '../../assets/styles/widgets/input.scss';
 
-const ModalInput = ({setInput, errors, setErrors}) => {
-    const [value, setValue] = useState('');
+const Input = ({input, setInput, errors, setErrors}) => {
 
     const changeHandler = (event) => {
         setInput(event.target.value);
         setErrors({});
-        setValue(event.target.value);
     };
 
     const debouncedChangeHandler = useMemo(() => {
@@ -23,18 +21,20 @@ const ModalInput = ({setInput, errors, setErrors}) => {
         <input
             onChange={debouncedChangeHandler}
             type="text"
-            className={classname('form-control', {'is-valid': !errors.title && value},
-                {'is-invalid': errors.title || _.isEmpty(value)})}
+            defaultValue={input}
+            className={classname('form-control', {'isValid': !errors.title},
+                {'isInvalid': errors.title})}
         />
     );
 };
 
 
-ModalInput.propTypes = {
+Input.propTypes = {
+    input: PropTypes.string.isRequired,
     setInput: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired,
     setErrors: PropTypes.func.isRequired
 };
 
 
-export default React.memo(ModalInput);
+export default React.memo(Input);

@@ -1,5 +1,8 @@
-.control-label {
-  span {
-    color: #dc3545;
-  }
+
+.isValid {
+  border: 1px solid #ced4da !important;
+}
+
+.isInvalid {
+  border: 1px solid #dc3545 !important;
 }

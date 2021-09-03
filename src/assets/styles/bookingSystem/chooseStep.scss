@@ -1,0 +1,11 @@
+
+.form-group{
+  .card {
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid #5f5e5e;
+    }
+  }
+}
+
