@@ -1,14 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import Input from "../widgets/input";
 import '../../assets/styles/bookingSystem/infoStep.scss';
+import {shallowEqual, useSelector} from "react-redux";
 
 const previousButton = (currentStep, setCurrentStep, _prev) => {
     if (currentStep !== 1) {
         return (
             <p className='changePrev text-decoration-underline'
                onClick={() => _prev(currentStep, setCurrentStep)}>
-                Change
+                <span>{'<<'}</span>{'Change'}
             </p>
         )
     }
@@ -28,11 +30,14 @@ const nextButton = (currentStep, setCurrentStep, _next) => {
 }
 
 const InfoStep = props => {
+    const newBookingRedux = useSelector(state => state.newBooking, shallowEqual);
+
     const [errors, setErrors] = useState({});
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
+
 
     if (props.currentStep !== 2) return null;
     console.log(firstname, lastname, phone, email)
@@ -79,7 +84,7 @@ const InfoStep = props => {
     return (
         <>
             <div className='w-100 text-start mt-4 mb-4'>
-                <p className='chooseInfo'>xxx, July 17, 2021 12:30pm</p>
+                <p className='chooseInfo'>{`${newBookingRedux.appointment} ${newBookingRedux.date} ${newBookingRedux.time}`}</p>
                 {previousButton(props.currentStep, props.setCurrentStep, props.prev)}
             </div>
 

@@ -17,9 +17,18 @@
     {
       "appointment": "Physiotherapy",
       "date": "04/09/2021",
-      "Time": "11:00am",
+      "time": "11:00am",
       "firstname": "John",
       "lastname": "Wang",
+      "phone": "000-123456",
+      "email": "xxx@xxx.com"
+    },
+    {
+      "appointment": "Chiro",
+      "date": "02/09/2021",
+      "time": "11:00am",
+      "firstname": "Gil",
+      "lastname": "Li",
       "phone": "000-123456",
       "email": "xxx@xxx.com"
     }

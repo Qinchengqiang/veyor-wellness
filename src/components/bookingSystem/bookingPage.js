@@ -69,9 +69,7 @@ const BookingPage = () => {
         <>
             <p>Step {currentStep} </p>
 
-            <form onSubmit={() => {
-                console.log('submit')
-            }}>
+            <form onSubmit={e => e.preventDefault()}>
                 <ChooseStep currentStep={currentStep} setCurrentStep={setCurrentStep} next={_next}/>
                 <InfoStep currentStep={currentStep} setCurrentStep={setCurrentStep} next={_next} prev={_prev}/>
                 <ConfirmStep currentStep={currentStep} setCurrentStep={setCurrentStep} next={_next} prev={_prev}/>

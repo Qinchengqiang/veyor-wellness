@@ -11,27 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b49bd906-f9f3-4962-b326-f06bc73935ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/appointmentsAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/bookingAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/allBookings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/appointments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/newBooking.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sagas/allBookings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sagas/appointments.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mock/src/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/mock/src/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/__snapshots__/bookingPage.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/__snapshots__/bookingPage.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/bookingPage.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/bookingPage.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/loginAction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/bookingSystem/bookingPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/bookingSystem/bookingPage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/styles/bookingSystem/chooseStep.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/bookingSystem/chooseStep.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/bookingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/bookingPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/chooseStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/chooseStep.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/redux.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/redux.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/infoStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/infoStep.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/newBooking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/newBooking.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +93,7 @@
       <workItem from="1629963784351" duration="11480000" />
       <workItem from="1630378507680" duration="11976000" />
       <workItem from="1630544539093" duration="55907000" />
-      <workItem from="1630655320024" duration="11376000" />
+      <workItem from="1630655320024" duration="27567000" />
     </task>
     <task id="LOCAL-00001" summary="launching setting">
       <created>1628664594177</created>
@@ -276,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630641457023</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="redux setting">
+      <created>1630669705452</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1630669705452</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +304,8 @@
     <MESSAGE value="booking step tabs" />
     <MESSAGE value="multiple steps form and info input" />
     <MESSAGE value="appointment choosing and date picker" />
-    <option name="LAST_COMMIT_MESSAGE" value="appointment choosing and date picker" />
+    <MESSAGE value="redux setting" />
+    <option name="LAST_COMMIT_MESSAGE" value="redux setting" />
   </component>
   <component name="WindowStateProjectService">
     <state x="3554" y="534" key="#ESLint" timestamp="1630657927618">

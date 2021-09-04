@@ -15,9 +15,9 @@ const newBooking = (state = initState, action = {}) => {
         case SET_CHOOSE_APPOINTMENT:
             const {firstname, lastname, phone, email} = state;
             return {
-                appointment: action.appointment,
-                date: action.date,
-                time: action.time,
+                appointment: action.appointment.appointment,
+                date: action.appointment.date,
+                time: action.appointment.time,
                 firstname,
                 lastname,
                 phone,
