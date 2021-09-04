@@ -85,8 +85,7 @@ const ChooseStep = props => {
         } else {
             setTime(new Map())
         }
-        // eslint-disable-next-line
-    }, [startDate, bookedDates])
+    }, [startDate, bookedDates, allBookingsRedux])
 
 
     if (props.currentStep !== 1) return null;

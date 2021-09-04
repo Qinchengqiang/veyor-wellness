@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Input from "../widgets/input";
 import '../../assets/styles/bookingSystem/infoStep.scss';
-import {shallowEqual, useSelector} from "react-redux";
+import {shallowEqual, useDispatch, useSelector} from "react-redux";
+import {fillPersonalInfo} from '../../actions/bookingAction';
 
 const previousButton = (currentStep, setCurrentStep, _prev) => {
     if (currentStep !== 1) {
@@ -17,27 +18,44 @@ const previousButton = (currentStep, setCurrentStep, _prev) => {
     return null;
 }
 
-const nextButton = (currentStep, setCurrentStep, _next) => {
-    if (currentStep < 3) {
+
+const completePersonalInfo = (currentStep, setCurrentStep, _next, firstname, lastname, phone, email, dispatch) => {
+    if (!_.isEmpty(firstname) && !_.isEmpty(lastname) && !_.isEmpty(email)){
+        const newInfo = {firstname: firstname, lastname: lastname, phone: phone, email: email};
+        dispatch(fillPersonalInfo(newInfo));
+        _next(currentStep, setCurrentStep);
+    }
+}
+
+
+const nextButton = (currentStep, setCurrentStep, _next, firstname, lastname, phone, email, dispatch) => {
+    let isVisible = !_.isEmpty(firstname) && !_.isEmpty(lastname) && !_.isEmpty(email);
+
+    if (currentStep < 3 && isVisible) {
         return (
-            <button className="step-btn btn btn-primary float-right"
-                    type="button"
-                    onClick={() => _next(currentStep, setCurrentStep)}>Complete Appointment<span>>></span>
+            <button className="step-btn btn btn-primary float-right" type="button"
+                    onClick={() => completePersonalInfo(currentStep, setCurrentStep, _next, firstname, lastname,
+                        phone, email, dispatch)}>
+                Complete Appointment<span>>></span>
             </button>
         )
     }
-    return null;
+    return (
+        <button className="step-btn btn btn-primary float-right invisible" type="button" disabled={true}>
+            Complete Appointment<span>>></span>
+        </button>
+    )
 }
 
 const InfoStep = props => {
     const newBookingRedux = useSelector(state => state.newBooking, shallowEqual);
+    const dispatch =useDispatch();
 
     const [errors, setErrors] = useState({});
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
-
 
     if (props.currentStep !== 2) return null;
     console.log(firstname, lastname, phone, email)
@@ -91,7 +109,7 @@ const InfoStep = props => {
             {form}
 
             <div className='w-100 text-start mt-4 mb-4'>
-                {nextButton(props.currentStep, props.setCurrentStep, props.next)}
+                {nextButton(props.currentStep, props.setCurrentStep, props.next, firstname, lastname, phone, email, dispatch)}
             </div>
         </>
 

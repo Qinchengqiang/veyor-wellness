@@ -26,10 +26,10 @@ const newBooking = (state = initState, action = {}) => {
         case SET_PERSONAL_INFO:
             const {appointment, date, time} = state;
             return {
-                firstname: action.firstname,
-                lastname: action.lastname,
-                phone: action.phone,
-                email: action.email,
+                firstname: action.info.firstname,
+                lastname: action.info.lastname,
+                phone: action.info.phone,
+                email: action.info.email,
                 appointment,
                 date,
                 time,
