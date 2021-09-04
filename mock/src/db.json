@@ -15,22 +15,24 @@
   ],
   "booking": [
     {
-      "appointment": "Physiotherapy",
+      "id": "139817b3525b003de2dd52218ffbcf19",
+      "appointment": "Chiro",
       "date": "04/09/2021",
-      "time": "11:00am",
-      "firstname": "John",
-      "lastname": "Wang",
-      "phone": "000-123456",
-      "email": "xxx@xxx.com"
+      "time": "2:00pm",
+      "firstname": "Chuangshen Shi",
+      "lastname": "Chuangshen Shi",
+      "phone": "0449232046",
+      "email": "shichuangshen@gmail.com"
     },
     {
-      "appointment": "Chiro",
-      "date": "02/09/2021",
-      "time": "11:00am",
-      "firstname": "Gil",
-      "lastname": "Li",
-      "phone": "000-123456",
-      "email": "xxx@xxx.com"
+      "id": "c23ffd1e4e2e4bd50a48d8b0a8742ee1",
+      "appointment": "Physiotherapy",
+      "date": "04/09/2021",
+      "time": "10:00am",
+      "firstname": "Chuangshen Shi",
+      "lastname": "Chuangshen Shi",
+      "phone": "0449232046",
+      "email": "shichuangshen@gmail.com"
     }
   ]
 }

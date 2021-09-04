@@ -43,7 +43,7 @@ const store = createStore(
 sagaMiddleware.run(rootSage);
 
 
-// jwt token setting with initial user info from /constants/users.js
+// jwt token setting with initial user info from /constants/key.js
 // if (localStorage.jwtToken) {
 //     setAxiosAuth(user);
 //     store.dispatch(setCurrentUser(user));

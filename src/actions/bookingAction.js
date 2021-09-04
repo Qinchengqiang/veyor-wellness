@@ -1,10 +1,15 @@
-import {SET_CHOOSE_APPOINTMENT, SET_PERSONAL_INFO, GET_ALL_BOOKINGS_REQUEST} from '../constants/redux';
+import {
+    SET_CHOOSE_APPOINTMENT,
+    GET_ALL_BOOKINGS_REQUEST,
+    COMPLETE_NEW_BOOKING_REQUEST
+} from '../constants/redux';
 
 export const getAllBookings = () => {
     return {
         type: GET_ALL_BOOKINGS_REQUEST
     }
 }
+
 
 export const chooseAppointment = (appointment) => {
     return {
@@ -13,9 +18,11 @@ export const chooseAppointment = (appointment) => {
     }
 }
 
-export const fillPersonalInfo = (info) => {
+
+export const addBooking = (newBooking) => {
     return {
-        type: SET_PERSONAL_INFO,
-        info
+        type: COMPLETE_NEW_BOOKING_REQUEST,
+        newBooking
     }
 }
+

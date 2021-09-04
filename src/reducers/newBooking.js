@@ -1,4 +1,4 @@
-import {SET_CHOOSE_APPOINTMENT, SET_PERSONAL_INFO} from '../constants/redux';
+import {COMPLETE_NEW_BOOKING_REQUEST, SET_CHOOSE_APPOINTMENT, SET_NEW_BOOKING} from '../constants/redux';
 
 const initState = {
     appointment: "",
@@ -23,16 +23,17 @@ const newBooking = (state = initState, action = {}) => {
                 phone,
                 email
             };
-        case SET_PERSONAL_INFO:
-            const {appointment, date, time} = state;
+        case COMPLETE_NEW_BOOKING_REQUEST:
+            return state;
+        case SET_NEW_BOOKING:
             return {
-                firstname: action.info.firstname,
-                lastname: action.info.lastname,
-                phone: action.info.phone,
-                email: action.info.email,
-                appointment,
-                date,
-                time,
+                appointment: action.newBooking.appointment,
+                date: action.newBooking.date,
+                time: action.newBooking.time,
+                firstname: action.newBooking.firstname,
+                lastname: action.newBooking.lastname,
+                phone: action.newBooking.phone,
+                email: action.newBooking.email,
             };
         default:
             return state;
