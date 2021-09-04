@@ -90,3 +90,5 @@ export const getIntegerSubstring = (str) => str.match(/\d+/)[0];    // return su
 
 // integer string (no +/- at beginning) --> integer
 export const stringToInteger = (str) => parseInt(str);
+
+export const validateEmail = (email) => /\S+@\S+\.\S+/.test(String(email));

@@ -12,9 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b49bd906-f9f3-4962-b326-f06bc73935ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/chooseStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/chooseStep.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/bookingSystem/infoStep.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/bookingSystem/infoStep.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/widgets/input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/widgets/input.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/infoStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/infoStep.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/newBooking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/newBooking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/widgets/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/snippets/stringSnippets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/snippets/stringSnippets.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +91,7 @@
       <workItem from="1629963784351" duration="11480000" />
       <workItem from="1630378507680" duration="11976000" />
       <workItem from="1630544539093" duration="55907000" />
-      <workItem from="1630655320024" duration="31189000" />
+      <workItem from="1630655320024" duration="34149000" />
     </task>
     <task id="LOCAL-00001" summary="launching setting">
       <created>1628664594177</created>
@@ -273,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630717258075</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="data flow for personal info">
+      <created>1630720969745</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1630720969746</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +318,8 @@
     <MESSAGE value="appointment choosing and date picker" />
     <MESSAGE value="redux setting" />
     <MESSAGE value="data flow for choosing Appointment" />
-    <option name="LAST_COMMIT_MESSAGE" value="data flow for choosing Appointment" />
+    <MESSAGE value="data flow for personal info" />
+    <option name="LAST_COMMIT_MESSAGE" value="data flow for personal info" />
   </component>
   <component name="WindowStateProjectService">
     <state x="3554" y="534" key="#ESLint" timestamp="1630657927618">

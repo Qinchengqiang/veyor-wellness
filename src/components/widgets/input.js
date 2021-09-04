@@ -2,10 +2,10 @@ import React, {useMemo} from "react";
 import debounce from "lodash.debounce";
 import PropTypes from 'prop-types';
 import classname from "classnames";
-// import _ from 'lodash';
+import _ from 'lodash';
 import '../../assets/styles/widgets/input.scss';
 
-const Input = ({input, setInput, errors, setErrors}) => {
+const Input = ({input, setInput, errors, setErrors, name}) => {
 
     const changeHandler = (event) => {
         setInput(event.target.value);
@@ -18,13 +18,16 @@ const Input = ({input, setInput, errors, setErrors}) => {
     }, []);
 
     return (
-        <input
-            onChange={debouncedChangeHandler}
-            type="text"
-            defaultValue={input}
-            className={classname('form-control', {'isValid': !errors.title},
-                {'isInvalid': errors.title})}
-        />
+        <>
+            <input
+                onChange={debouncedChangeHandler}
+                type="text"
+                defaultValue={input}
+                className={classname('form-control', {'isValid': errors.type !== name},
+                    {'isInvalid': errors.type === name})}
+            />
+            {!_.isEmpty(errors) &&  errors.type === name ? <p className="error-danger">{errors.title}</p> : null}
+        </>
     );
 };
 

@@ -1,18 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Input from "../widgets/input";
 import '../../assets/styles/bookingSystem/infoStep.scss';
 import {shallowEqual, useDispatch, useSelector} from "react-redux";
 import {fillPersonalInfo} from '../../actions/bookingAction';
+import {validateEmail} from '../../utils/snippets/stringSnippets';
 
 const previousButton = (currentStep, setCurrentStep, _prev) => {
     if (currentStep !== 1) {
         return (
-            <p className='changePrev text-decoration-underline'
-               onClick={() => _prev(currentStep, setCurrentStep)}>
-                <span>{'<<'}</span>{'Change'}
-            </p>
+            <div className='d-flex'>
+                <p className='changePrev text-decoration-underline'
+                   onClick={() => _prev(currentStep, setCurrentStep)}>
+                    <span>{'<<'}</span>{'Change'}
+                </p>
+            </div>
         )
     }
     return null;
@@ -20,7 +23,7 @@ const previousButton = (currentStep, setCurrentStep, _prev) => {
 
 
 const completePersonalInfo = (currentStep, setCurrentStep, _next, firstname, lastname, phone, email, dispatch) => {
-    if (!_.isEmpty(firstname) && !_.isEmpty(lastname) && !_.isEmpty(email)){
+    if (!_.isEmpty(firstname) && !_.isEmpty(lastname) && !_.isEmpty(email)) {
         const newInfo = {firstname: firstname, lastname: lastname, phone: phone, email: email};
         dispatch(fillPersonalInfo(newInfo));
         _next(currentStep, setCurrentStep);
@@ -49,13 +52,20 @@ const nextButton = (currentStep, setCurrentStep, _next, firstname, lastname, pho
 
 const InfoStep = props => {
     const newBookingRedux = useSelector(state => state.newBooking, shallowEqual);
-    const dispatch =useDispatch();
-
+    const dispatch = useDispatch();
     const [errors, setErrors] = useState({});
+
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
+
+    useEffect(() => {
+        if (!_.isEmpty(email)) {
+            if (!validateEmail(email)) setErrors({type: 'email', title: 'Your email address is invalid'})
+            else setErrors({});
+        }
+    }, [email])
 
     if (props.currentStep !== 2) return null;
     console.log(firstname, lastname, phone, email)
@@ -73,6 +83,7 @@ const InfoStep = props => {
                 </div>
                 <div className='lastname'>
                     <Input input={lastname}
+                           name='lastname'
                            setInput={setLastname}
                            errors={errors}
                            setErrors={setErrors}/>
@@ -95,7 +106,6 @@ const InfoStep = props => {
                        setErrors={setErrors}/>
             </div>
 
-            {errors ? <p className="text-danger">{errors.title}</p> : null}
         </div>
     );
 
