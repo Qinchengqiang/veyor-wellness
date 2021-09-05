@@ -13,7 +13,6 @@
     <list default="true" id="b49bd906-f9f3-4962-b326-f06bc73935ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mock/src/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/mock/src/db.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +98,7 @@
       <workItem from="1629963784351" duration="11480000" />
       <workItem from="1630378507680" duration="11976000" />
       <workItem from="1630544539093" duration="55907000" />
-      <workItem from="1630655320024" duration="90112000" />
+      <workItem from="1630655320024" duration="91443000" />
     </task>
     <task id="LOCAL-00001" summary="launching setting">
       <created>1628664594177</created>
@@ -325,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630819419573</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="eddit README.md">
+      <created>1630821055192</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1630821055193</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +373,8 @@
     <MESSAGE value="update redux" />
     <MESSAGE value="useCallback and useMemo for updating performance" />
     <MESSAGE value="deployment setting" />
-    <option name="LAST_COMMIT_MESSAGE" value="deployment setting" />
+    <MESSAGE value="eddit README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="eddit README.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="3554" y="534" key="#ESLint" timestamp="1630813921930">
@@ -405,11 +412,11 @@
     </state>
     <state width="1504" height="505" key="GridCell.Tab.0.right/0.0.1440.900/1440.-211.3008.1692@1440.-211.3008.1692" timestamp="1630818587562" />
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1628662770497" />
-    <state x="2108" y="146" key="Vcs.Push.Dialog.v2" timestamp="1630819431571">
+    <state x="2103" y="145" key="Vcs.Push.Dialog.v2" timestamp="1630821092918">
       <screen x="1440" y="-211" width="3008" height="1692" />
     </state>
     <state x="-2340" y="357" key="Vcs.Push.Dialog.v2/0.0.1440.900/-3008.0.3008.1692@-3008.0.3008.1692" timestamp="1630549321062" />
-    <state x="2108" y="146" key="Vcs.Push.Dialog.v2/0.0.1440.900/1440.-211.3008.1692@1440.-211.3008.1692" timestamp="1630819431571" />
+    <state x="2103" y="145" key="Vcs.Push.Dialog.v2/0.0.1440.900/1440.-211.3008.1692@1440.-211.3008.1692" timestamp="1630821092918" />
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1628666605017" />
     <state x="-2340" y="375" key="Vcs.Push.Dialog.v2/0.23.1440.877/-3008.23.3008.1669@-3008.23.3008.1669" timestamp="1630395971967" />
     <state x="2108" y="375" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.23.3008.1669@1440.23.3008.1669" timestamp="1629955172186" />

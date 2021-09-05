@@ -31,11 +31,47 @@ $ git https://github.com/Qinchengqiang/veyor-wellness.git booking-app
 
 ## Deploy 
 
-
+step 1: if don't install json-server and serve globally, please do it by:
 ```
+$ npm install -g serve
+$ npm install -g json-server
+```
+
+step 2: setting mock (go to mock directory /booking-app/mock)
+```
+$ cd booking-app/mock 
+$ npm install
+$ json-server --watch src/db.json --port 3005
+```
+now the mock API at http://localhost:3005
+
+
+step 3: build and run app (at root directory /booking-app)
+```
+$ cd booking-app
+$ yarn 
+$ yarn build
+$ serve -s build
+```
+now open http://localhost:5000, and you can use app to book.
+
+run unit test (at root directory /booking-app)
+```
+$ cd booking-app
+$ yarn test
 ```
 
 ## API
+
+Resources
+
+http://localhost:3005/appointments
+
+http://localhost:3005/booking
+
+Home
+
+http://localhost:3005
 
 ## Maintainers
 
