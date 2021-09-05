@@ -8,13 +8,16 @@ import Down from 'bootstrap-icons/icons/chevron-compact-down.svg';
 import DatePicker from 'react-datepicker';
 import {shallowEqual, useDispatch, useSelector} from "react-redux";
 import {chooseAppointment} from '../../actions/bookingAction';
+import {isFirstDateLarge, twoDatesEqual, isTodayTimePassed} from '../../utils/snippets/dateSnippets';
 
 
 const completeChooseAppointment = (_next, currentStep, setCurrentStep, dispatch, chooseData) => {
-    let newAppointment = {appointment: chooseData.appointment, date: chooseData.date.toLocaleDateString(), time: chooseData.time};
-    console.log('==> completeChooseAppointment', newAppointment)
-
-    if (!_.isEmpty(chooseData.time) && !_.isEmpty(chooseData.appointment)){
+    let newAppointment = {
+        appointment: chooseData.appointment,
+        date: chooseData.date.toLocaleDateString(),
+        time: chooseData.time
+    };
+    if (!_.isEmpty(chooseData.time) && !_.isEmpty(chooseData.appointment)) {
         dispatch(chooseAppointment(newAppointment));
         _next(currentStep, setCurrentStep);
     }
@@ -41,7 +44,7 @@ const filterBookedDate = (allBookings) => {
     let futureBookings = new Map();
     allBookings.forEach(booking => {
         let dt = new Date(booking.date);
-        if (dt >= curDate && !futureBookings.has('bird')) futureBookings.set(booking.date, 1);
+        if (dt >= curDate && !futureBookings.has(booking.date)) futureBookings.set(booking.date, 1);
     })
     return futureBookings
 }
@@ -49,6 +52,7 @@ const filterBookedDate = (allBookings) => {
 const ChooseStep = props => {
     const appointmentsRedux = useSelector(state => state.appointments, shallowEqual);
     const allBookingsRedux = useSelector(state => state.allBookings, shallowEqual);
+    const newBookingRedux = useSelector(state => state.newBooking, shallowEqual);
     const dispatch = useDispatch();
 
     const [appointmentList, setAppointmentList] = useState('');
@@ -64,6 +68,15 @@ const ChooseStep = props => {
     useEffect(() => {
         setAppointmentList(appointmentsRedux.data)
     }, [appointmentsRedux]);
+
+
+    useEffect(() => {
+        if (newBookingRedux.result === 'another') {
+            setAppointment({"name": "", "price": ""});
+            setStartDate(new Date());
+            setCurrSelectTime(null);
+        }
+    }, [newBookingRedux])
 
 
     useEffect(() => {
@@ -102,7 +115,7 @@ const ChooseStep = props => {
     };
 
     const choose = (
-        <div className="form-group mt-4">
+        <div className="form-group mt-5">
             {(appointmentList || []).map(item => (
                 <div className='card w-100 text-start mb-2 p-2'
                      key={item.name}
@@ -117,9 +130,7 @@ const ChooseStep = props => {
 
     const datePicking = (
         <>
-            <p>{appointment.name}</p>
-
-            <Dropdown className='choose-dropdown w-100'>
+            <Dropdown className='choose-dropdown w-100 mt-5'>
                 <Dropdown.Toggle id="dropdown-basic"
                                  className='w-100 p-1 d-flex flex-row align-items-center justify-content-between'>
                     <div className='Toggle-card text-start p-2'>
@@ -147,7 +158,7 @@ const ChooseStep = props => {
                         selected={startDate}
                         onSelect={(date) => setStartDate(date)}
                         filterDate={isFiltered}
-                        dateFormat="dd/MM/yyyy"
+                        dateFormat="MMMM dd, yyyy"
                     />
                 </div>
             </div>
@@ -155,26 +166,56 @@ const ChooseStep = props => {
             <div className='time-checkbox w-100 text-start'>
                 <p className={'timeCheck'}>please select a time:</p>
 
-                {['10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm'].map(t => (
-                    timeAvailable.has(t) ?
-                        <div key={t}>
-                            <input type="checkbox" name={`time`} value={t} disabled={true}/>
-                            <label htmlFor={`time:${t}`} className='locked'>{t}</label><br/>
-                        </div>
-                        :
-                        <div key={t}>
-                            <input type="radio" name={`time`} value={t}
-                                   checked={_.isEmpty(currSelectTime) ? false : currSelectTime === t }
-                                   onChange={e => {if (e.target.checked) setCurrSelectTime(e.target.value);}}/>
-                            <label htmlFor={`time:${t}`}>{t}</label><br/>
-                        </div>
-                ))}
+                {isFirstDateLarge(startDate, new Date()) ?
+                    ['10:00am', '11:00am', '12:00pm', '1:30pm', '2:30pm', '3:00pm', '4:00pm'].map(t => (
+                        timeAvailable.has(t) ?
+                            <div key={t}>
+                                <input type="checkbox" name={`time`} value={t} disabled={true}/>
+                                <label htmlFor={`time:${t}`} className='locked'>{t}</label><br/>
+                            </div>
+                            :
+                            <div key={t}>
+                                <input type="radio" name={`time`} value={t}
+                                       checked={_.isEmpty(currSelectTime) ? false : currSelectTime === t}
+                                       onChange={e => {
+                                           if (e.target.checked) setCurrSelectTime(e.target.value);
+                                       }}/>
+                                <label htmlFor={`time:${t}`}>{t}</label><br/>
+                            </div>
+                    )) : null}
+
+                {twoDatesEqual(startDate, new Date()) && new Date().getDay() > 1?
+                    ['10:00am', '11:00am', '12:00pm', '1:30pm', '2:30pm', '3:00pm', '4:00pm'].map(t => (
+                        timeAvailable.has(t) || isTodayTimePassed(t)?
+                            <div key={t}>
+                                <input type="checkbox" name={`time`} value={t} disabled={true}/>
+                                <label htmlFor={`time:${t}`} className='locked'>{t}</label><br/>
+                            </div>
+                            :
+                            <div key={t}>
+                                <input type="radio" name={`time`} value={t}
+                                       checked={_.isEmpty(currSelectTime) ? false : currSelectTime === t}
+                                       onChange={e => {
+                                           if (e.target.checked) setCurrSelectTime(e.target.value);
+                                       }}/>
+                                <label htmlFor={`time:${t}`}>{t}</label><br/>
+                            </div>
+                    )) : null}
+
+                {twoDatesEqual(startDate, new Date()) && new Date().getDay() < 2 ?
+                    ['10:00am', '11:00am', '12:00pm', '1:30pm', '2:30pm', '3:00pm', '4:00pm'].map(t => (
+                            <div key={t}>
+                                <input type="checkbox" name={`time`} value={t} disabled={true}/>
+                                <label htmlFor={`time:${t}`} className='locked'>{t}</label><br/>
+                            </div>
+                    )) : null}
 
             </div>
         </>
     )
 
     const chooseData = {appointment: appointment.name, date: startDate, time: currSelectTime};
+
 
     return (
         <>
@@ -190,6 +231,8 @@ const ChooseStep = props => {
 
 ChooseStep.propTypes = {
     currentStep: PropTypes.number.isRequired,
+    setCurrentStep: PropTypes.func.isRequired,
+    next: PropTypes.func.isRequired
 };
 
 export default React.memo(ChooseStep);

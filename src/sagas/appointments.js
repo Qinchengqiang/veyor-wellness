@@ -3,7 +3,7 @@ import {SET_APPOINTMENTS_REQUEST, SET_APPOINTMENTS_LIST, HANDLE_APPOINTMENTS_ERR
 import axios from "axios";
 
 // function to wrap async-await axios
-export const appointmentsAxios = async () => {
+const appointmentsAxios = async () => {
     try {
         const res = await axios.get('/appointments');
         return {res: true, data: res.data};

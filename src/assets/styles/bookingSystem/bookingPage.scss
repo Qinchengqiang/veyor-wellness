@@ -8,10 +8,12 @@ $background-white: #FFFFFF!important;
   max-width: 690px;
 
   .btn-check:focus+.btn-primary,
-  .btn-primary:focus {
+  .btn-primary:focus,
+  .btn:focus {
     border-color: #8a8a8a!important;
     box-shadow: 0 0 0 0 rgba(214, 214, 214, 0.5)!important;
   }
+
 
   h1 {
     margin-top: 5rem;
@@ -140,6 +142,10 @@ $background-white: #FFFFFF!important;
   }
 
   .step-btn {
-    background-color: #393939!important;
+    background-color: #373737 !important;
+    &:hover {
+      background-color: #212121 !important;
+      box-shadow: 0 0 .25rem .25rem rgba(214, 214, 214, 0.5)!important;
+    }
   }
 }

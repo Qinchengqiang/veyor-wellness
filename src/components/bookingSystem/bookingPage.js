@@ -4,7 +4,7 @@ import loadable from "@loadable/component";
 import classname from "classnames";
 import {getAppointments} from '../../actions/appointmentsAction';
 import {getAllBookings} from '../../actions/bookingAction';
-import {useDispatch} from "react-redux";
+import {shallowEqual, useDispatch, useSelector} from "react-redux";
 
 
 const ChooseStep = loadable(() => import('./chooseStep'));
@@ -25,6 +25,7 @@ const _prev = (currentStep, setCurrentStep) => {
 
 
 const BookingPage = () => {
+    const newBookingRedux = useSelector(state => state.newBooking, shallowEqual);
     const [currentStep, setCurrentStep] = useState(1);
     const dispatch = useDispatch();
 
@@ -35,12 +36,14 @@ const BookingPage = () => {
         // eslint-disable-next-line
     }, [])
 
-    // update appointment every 10 min
     useEffect(() => {
-        const interval = setInterval(() => dispatch(getAppointments()), 1000 * 60 * 10);
-        return () => clearInterval(interval);
+        if (newBookingRedux.result === 'another') {
+            dispatch(getAppointments());
+            dispatch(getAllBookings());
+        }
         // eslint-disable-next-line
-    }, [])
+    }, [newBookingRedux])
+
 
     const tabs = (
         <div className='tabs mt-4 d-flex flex-row align-items-stretch'>
@@ -67,12 +70,10 @@ const BookingPage = () => {
 
     const booking = (
         <>
-            <p>Step {currentStep} </p>
-
             <form onSubmit={e => e.preventDefault()}>
                 <ChooseStep currentStep={currentStep} setCurrentStep={setCurrentStep} next={_next}/>
                 <InfoStep currentStep={currentStep} setCurrentStep={setCurrentStep} next={_next} prev={_prev}/>
-                <ConfirmStep currentStep={currentStep} setCurrentStep={setCurrentStep} next={_next} prev={_prev}/>
+                <ConfirmStep currentStep={currentStep} setCurrentStep={setCurrentStep} prev={_prev}/>
             </form>
         </>
     );

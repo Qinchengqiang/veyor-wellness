@@ -30,10 +30,10 @@ const completePersonalInfo = (currentStep, setCurrentStep, _next, newBooking, di
 }
 
 
-const nextButton = (currentStep, setCurrentStep, _next, newBooking, dispatch) => {
-    let isVisible = !_.isEmpty(newBooking.firstname) && !_.isEmpty(newBooking.lastname) && !_.isEmpty(newBooking.email);
+const nextButton = (currentStep, setCurrentStep, _next, newBooking, dispatch, errors) => {
+    let isAvailable = !_.isEmpty(newBooking.firstname) && !_.isEmpty(newBooking.lastname) && !_.isEmpty(newBooking.email) && _.isEmpty(errors);
 
-    if (currentStep < 3 && isVisible) {
+    if (currentStep < 3 && isAvailable) {
         return (
             <button className="step-btn btn btn-primary float-right" type="button"
                     onClick={() => completePersonalInfo(currentStep, setCurrentStep, _next, newBooking, dispatch)}>
@@ -42,7 +42,7 @@ const nextButton = (currentStep, setCurrentStep, _next, newBooking, dispatch) =>
         )
     }
     return (
-        <button className="step-btn btn btn-primary float-right invisible" type="button" disabled={true}>
+        <button className="step-btn btn btn-primary float-right" type="button" disabled={true}>
             Complete Appointment<span>>></span>
         </button>
     )
@@ -58,6 +58,7 @@ const InfoStep = props => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
 
+
     useEffect(() => {
         if (!_.isEmpty(email)) {
             if (!validateEmail(email)) setErrors({type: 'email', title: 'Your email address is invalid'})
@@ -65,13 +66,22 @@ const InfoStep = props => {
         }
     }, [email])
 
+    useEffect(() => {
+        if (newBookingRedux.result === 'another') {
+            setFirstname('');
+            setLastname('');
+            setPhone('');
+            setEmail('');
+        }
+    },[newBookingRedux])
+
     if (props.currentStep !== 2) return null;
-    console.log(firstname, lastname, phone, email)
+    // console.log(firstname, lastname, phone, email)
 
     const newBooking = {
-        appointment: newBookingRedux.appointment,
-        date: newBookingRedux.date,
-        time: newBookingRedux.time,
+        appointment: newBookingRedux.data.appointment,
+        date: newBookingRedux.data.date,
+        time: newBookingRedux.data.time,
         firstname: firstname,
         lastname: lastname,
         phone: phone,
@@ -120,14 +130,14 @@ const InfoStep = props => {
     return (
         <>
             <div className='w-100 text-start mt-4 mb-4'>
-                <p className='chooseInfo'>{`${newBookingRedux.appointment} ${newBookingRedux.date} ${newBookingRedux.time}`}</p>
+                <p className='chooseInfo'>{`${newBookingRedux.data.appointment} ${newBookingRedux.data.date} ${newBookingRedux.data.time}`}</p>
                 {previousButton(props.currentStep, props.setCurrentStep, props.prev)}
             </div>
 
             {form}
 
             <div className='w-100 text-start mt-4 mb-4'>
-                {nextButton(props.currentStep, props.setCurrentStep, props.next, newBooking, dispatch)}
+                {nextButton(props.currentStep, props.setCurrentStep, props.next, newBooking, dispatch, errors)}
             </div>
         </>
 
@@ -136,6 +146,9 @@ const InfoStep = props => {
 
 InfoStep.propTypes = {
     currentStep: PropTypes.number.isRequired,
+    setCurrentStep: PropTypes.func.isRequired,
+    next: PropTypes.func.isRequired,
+    prev: PropTypes.func.isRequired
 };
 
 export default React.memo(InfoStep);

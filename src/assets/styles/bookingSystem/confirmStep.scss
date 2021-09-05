@@ -1,0 +1,83 @@
+$text-color: #5f5f5f !important;
+$text-grey: #9f9e9e !important;
+$border-color: #d9d9d9 !important;
+$border-active: #5b5b5b !important;
+$background-white: #FFFFFF !important;
+$date-color: #818181 !important;
+
+.confirmation {
+  .confirmationInfo {
+
+    @media (max-width: 767.98px) {
+      width: 100%!important;
+      max-width: 100%!important;
+
+      .confirm-btn {
+        width: 100%;
+        display: flex;
+        flex-direction: column!important;
+        align-items: center!important;
+
+        .btn {
+          margin: 7px 0 7px 0!important;
+        }
+        .white-btn {
+          width: 80% !important;
+        }
+        .step-btn {
+          width: 100% !important;
+        }
+      }
+    }
+
+    max-width: 350px;
+    margin-right: 8px;
+
+    .step-btn {
+      margin-right: 5px;
+      min-width: 108px;
+      font-size: 0.8rem!important;
+    }
+
+    .white-btn {
+      border-color: $border-color;
+      min-width: 130px!important;
+      font-size: 0.8rem !important;
+      margin-top: 1rem;
+
+      &:hover {
+        border-color: $border-active;
+      }
+
+      span{
+        font-size: 0.6rem!important;
+      }
+    }
+
+    h3 {
+      font-size: 1.6rem !important;
+    }
+
+    h3.date-color {
+      color: $date-color;
+    }
+  }
+
+  .qr-code {
+    max-width: 180px;
+    border-left: 1px solid $border-color;
+
+    @media (max-width: 767.98px) {
+      margin-top: 2rem;
+      border-left: 0 solid $background-white;
+      width: 100%!important;
+      max-width: 100%!important;
+      text-align: center;
+
+      img {
+        max-width: 230px!important;
+      }
+    }
+  }
+
+}

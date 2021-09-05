@@ -3,7 +3,7 @@ import {GET_ALL_BOOKINGS_REQUEST, SET_ALL_BOOKINGS, HANDLE_ALL_BOOKINGS_ERROR } 
 import axios from "axios";
 
 // function to wrap async-await axios
-export const allBookingsAxios = async () => {
+const allBookingsAxios = async () => {
     try {
         const res = await axios.get('/booking');
         return {res: true, data: res.data};
