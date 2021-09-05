@@ -38,19 +38,16 @@ function* addBooking(action) {
         const result = yield call(postNewBookingAxios, payload);
 
         if (result.res) {
-            const newBooking = {result: true, error: null, data: payload}
+            const newBooking = {result: 'success', error: null, data: payload}
             yield put({type: SET_NEW_BOOKING, newBooking: newBooking})
         } else {
             const newBooking = {
-                result: false,
+                result: 'false',
                 error: {message: result.data.message},
                 data: {id: null, ...action.newBooking}
             }
             yield put({type: HANDLE_BOOKING_ERROR, newBooking: newBooking})
         }
-
-        console.log('result ==== ', result)
-
     } catch (e) {
         console.log(e)
     }
@@ -61,9 +58,6 @@ function* cancelBooking(action) {
         const bookingId = action.id;
         const result = yield call(cancelBookingAxios, bookingId);
         if (result.res) yield put({type: CANCEL_BOOKING})
-
-        console.log('cancel result ==== ', result.res)
-
     } catch (e) {
         console.log(e)
     }
@@ -74,9 +68,6 @@ function* RescheduleBooking(action) {
         const bookingId = action.id;
         const result = yield call(cancelBookingAxios, bookingId);
         if (result.res) yield put({type: RESCHEDULE_BOOKING})
-
-        console.log('reschedule result ==== ', result.res)
-
     } catch (e) {
         console.log(e)
     }

@@ -12,6 +12,7 @@ const allBookingsAxios = async () => {
     }
 };
 
+
 function* getAllBookings() {
     try {
         const result = yield call(allBookingsAxios);

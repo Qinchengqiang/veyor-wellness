@@ -1,29 +1,28 @@
-$text-color: #5f5f5f !important;
-$text-grey: #9f9e9e !important;
-$border-color: #d9d9d9 !important;
-$border-active: #5b5b5b !important;
-$background-white: #FFFFFF !important;
+@import 'args.scss';
+
 $date-color: #818181 !important;
 
 .confirmation {
   .confirmationInfo {
 
     @media (max-width: 767.98px) {
-      width: 100%!important;
-      max-width: 100%!important;
+      width: 100% !important;
+      max-width: 100% !important;
 
       .confirm-btn {
         width: 100%;
         display: flex;
-        flex-direction: column!important;
-        align-items: center!important;
+        flex-direction: column !important;
+        align-items: center !important;
 
         .btn {
-          margin: 7px 0 7px 0!important;
+          margin: 7px 0 7px 0 !important;
         }
+
         .white-btn {
           width: 80% !important;
         }
+
         .step-btn {
           width: 100% !important;
         }
@@ -36,12 +35,12 @@ $date-color: #818181 !important;
     .step-btn {
       margin-right: 5px;
       min-width: 108px;
-      font-size: 0.8rem!important;
+      font-size: 0.8rem !important;
     }
 
     .white-btn {
       border-color: $border-color;
-      min-width: 130px!important;
+      min-width: 130px !important;
       font-size: 0.8rem !important;
       margin-top: 1rem;
 
@@ -49,8 +48,8 @@ $date-color: #818181 !important;
         border-color: $border-active;
       }
 
-      span{
-        font-size: 0.6rem!important;
+      span {
+        font-size: 0.6rem !important;
       }
     }
 
@@ -61,6 +60,11 @@ $date-color: #818181 !important;
     h3.date-color {
       color: $date-color;
     }
+
+    p.price {
+      font-size: 0.9rem !important;
+      font-weight: 600;
+    }
   }
 
   .qr-code {
@@ -70,12 +74,12 @@ $date-color: #818181 !important;
     @media (max-width: 767.98px) {
       margin-top: 2rem;
       border-left: 0 solid $background-white;
-      width: 100%!important;
-      max-width: 100%!important;
+      width: 100% !important;
+      max-width: 100% !important;
       text-align: center;
 
       img {
-        max-width: 230px!important;
+        max-width: 230px !important;
       }
     }
   }

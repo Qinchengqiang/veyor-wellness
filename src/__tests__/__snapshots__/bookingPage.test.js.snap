@@ -2,7 +2,7 @@
 
 exports[`App test: matches snapshot 1`] = `
 <div
-  className="newBooking h-100 d-flex flex-column align-items-center"
+  className="booking h-100 d-flex flex-column align-items-center justify-content-center"
 >
   <h1
     data-testid="Booking"
@@ -51,11 +51,6 @@ exports[`App test: matches snapshot 1`] = `
       </div>
     </div>
   </div>
-  <p>
-    Step 
-    1
-     
-  </p>
   <form
     onSubmit={[Function]}
   />

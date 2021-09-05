@@ -8,6 +8,7 @@ import {
     SCHEDULE_ANOTHER_BOOKING
 } from '../constants/redux';
 
+
 const initState = {
     result: null,
     error: null,
@@ -16,6 +17,7 @@ const initState = {
         firstname: "", lastname: "", phone: "", email: ""
     }
 };
+
 
 const newBooking = (state = initState, action = {}) => {
     switch (action.type) {

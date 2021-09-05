@@ -12,6 +12,7 @@ const appointmentsAxios = async () => {
     }
 };
 
+
 function* getAppointments() {
     try {
         const result = yield call(appointmentsAxios);

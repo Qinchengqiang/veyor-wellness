@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import PropTypes from 'prop-types';
 import '../../assets/styles/bookingSystem/chooseStep.scss';
 import "react-datepicker/dist/react-datepicker.css";
@@ -11,7 +11,7 @@ import {chooseAppointment} from '../../actions/bookingAction';
 import {isFirstDateLarge, twoDatesEqual, isTodayTimePassed} from '../../utils/snippets/dateSnippets';
 
 
-const completeChooseAppointment = (_next, currentStep, setCurrentStep, dispatch, chooseData) => {
+const completeChooseAppointment = (_next, dispatch, chooseData) => {
     let newAppointment = {
         appointment: chooseData.appointment,
         date: chooseData.date.toLocaleDateString(),
@@ -19,15 +19,16 @@ const completeChooseAppointment = (_next, currentStep, setCurrentStep, dispatch,
     };
     if (!_.isEmpty(chooseData.time) && !_.isEmpty(chooseData.appointment)) {
         dispatch(chooseAppointment(newAppointment));
-        _next(currentStep, setCurrentStep);
+        _next()
     }
 }
 
-const nextButton = (currentStep, setCurrentStep, _next, isDisabled, dispatch, chooseData) => {
+
+const nextButton = (currentStep, _next, isDisabled, dispatch, chooseData) => {
     if (currentStep < 3 && !isDisabled) {
         return (
             <button className="btn step-btn btn-primary float-right" type="button"
-                    onClick={() => completeChooseAppointment(_next, currentStep, setCurrentStep, dispatch, chooseData)}>
+                    onClick={() => completeChooseAppointment(_next, dispatch, chooseData)}>
                 Continue<span>>></span>
             </button>
         )
@@ -39,6 +40,7 @@ const nextButton = (currentStep, setCurrentStep, _next, isDisabled, dispatch, ch
     )
 };
 
+
 const filterBookedDate = (allBookings) => {
     const curDate = new Date(new Date().toLocaleDateString());
     let futureBookings = new Map();
@@ -48,6 +50,7 @@ const filterBookedDate = (allBookings) => {
     })
     return futureBookings
 }
+
 
 const ChooseStep = props => {
     const appointmentsRedux = useSelector(state => state.appointments, shallowEqual);
@@ -64,27 +67,30 @@ const ChooseStep = props => {
     const [startDate, setStartDate] = useState(new Date());
     const [currSelectTime, setCurrSelectTime] = useState(null);
 
+    const newBookingReduxMemo = useMemo(() => newBookingRedux, [newBookingRedux]);
+    const appointmentsReduxMemo = useMemo(() => appointmentsRedux, [appointmentsRedux]);
+    const allBookingsReduxMemo = useMemo(() => allBookingsRedux, [allBookingsRedux]);
 
     useEffect(() => {
-        setAppointmentList(appointmentsRedux.data)
-    }, [appointmentsRedux]);
+        setAppointmentList(appointmentsReduxMemo.data)
+    }, [appointmentsReduxMemo]);
 
 
     useEffect(() => {
-        if (newBookingRedux.result === 'another') {
+        if (newBookingReduxMemo.result === 'another') {
             setAppointment({"name": "", "price": ""});
             setStartDate(new Date());
             setCurrSelectTime(null);
         }
-    }, [newBookingRedux])
+    }, [newBookingReduxMemo])
 
 
     useEffect(() => {
-        if (!_.isEmpty(allBookingsRedux.data)) {
-            const futureBookings = filterBookedDate(allBookingsRedux.data);
+        if (!_.isEmpty(allBookingsReduxMemo.data)) {
+            const futureBookings = filterBookedDate(allBookingsReduxMemo.data);
             setBookedDate(futureBookings);
         }
-    }, [allBookingsRedux])
+    }, [allBookingsReduxMemo])
 
 
     useEffect(() => {
@@ -163,7 +169,7 @@ const ChooseStep = props => {
                 </div>
             </div>
 
-            <div className='time-checkbox w-100 text-start'>
+            <div className='time-checkbox w-100 text-start p-3'>
                 <p className={'timeCheck'}>please select a time:</p>
 
                 {isFirstDateLarge(startDate, new Date()) ?
@@ -222,7 +228,7 @@ const ChooseStep = props => {
             {_.isEmpty(appointment.name) ? choose : datePicking}
 
             <div className='w-100 text-start mt-4 mb-4'>
-                {nextButton(props.currentStep, props.setCurrentStep, props.next,
+                {nextButton(props.currentStep, props.next,
                     _.isEmpty(currSelectTime), dispatch, chooseData)}
             </div>
         </>
@@ -231,7 +237,6 @@ const ChooseStep = props => {
 
 ChooseStep.propTypes = {
     currentStep: PropTypes.number.isRequired,
-    setCurrentStep: PropTypes.func.isRequired,
     next: PropTypes.func.isRequired
 };
 

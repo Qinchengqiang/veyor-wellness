@@ -11,10 +11,8 @@ import createSagaMiddleware from 'redux-saga';
 import rootSage from '../sagas';
 
 
-/** must wrap the app component since the redux */
 const AppWrapper = () => {
 
-    /** saga */
     const sagaMiddleware = createSagaMiddleware();
     const store = createStore(
         rootReducer,
@@ -24,7 +22,6 @@ const AppWrapper = () => {
     );
     sagaMiddleware.run(rootSage);
 
-
     return (
         <Provider store={store}>
             <App/>
@@ -32,9 +29,11 @@ const AppWrapper = () => {
     )
 }
 
+
 afterEach(() => {
     cleanup();
 });
+
 
 describe('App group:', () => {
     // test 1

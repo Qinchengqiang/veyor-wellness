@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useMemo, useState, useCallback} from 'react';
 import '../../assets/styles/bookingSystem/bookingPage.scss';
 import loadable from "@loadable/component";
 import classname from "classnames";
@@ -10,18 +10,6 @@ import {shallowEqual, useDispatch, useSelector} from "react-redux";
 const ChooseStep = loadable(() => import('./chooseStep'));
 const InfoStep = loadable(() => import('./infoStep'));
 const ConfirmStep = loadable(() => import('./confirmStep'));
-
-
-const _next = (currentStep, setCurrentStep) => {
-    let nextStep = currentStep >= 2 ? 3 : currentStep + 1;
-    setCurrentStep(nextStep);
-}
-
-
-const _prev = (currentStep, setCurrentStep) => {
-    let preStep = currentStep <= 1 ? 1 : currentStep - 1
-    setCurrentStep(preStep);
-}
 
 
 const BookingPage = () => {
@@ -36,14 +24,25 @@ const BookingPage = () => {
         // eslint-disable-next-line
     }, [])
 
+    const newBookingReduxMemo = useMemo(() => newBookingRedux, [newBookingRedux]);
+
     useEffect(() => {
         if (newBookingRedux.result === 'another') {
             dispatch(getAppointments());
             dispatch(getAllBookings());
         }
         // eslint-disable-next-line
-    }, [newBookingRedux])
+    }, [newBookingReduxMemo])
 
+    const next = useCallback(() => {
+        let nextStep = currentStep >= 2 ? 3 : currentStep + 1;
+        setCurrentStep(nextStep);
+    },[currentStep]);
+
+    const prev = useCallback(() => {
+        let preStep = currentStep <= 1 ? 1 : currentStep - 1
+        setCurrentStep(preStep);
+    },[currentStep]);
 
     const tabs = (
         <div className='tabs mt-4 d-flex flex-row align-items-stretch'>
@@ -71,9 +70,9 @@ const BookingPage = () => {
     const booking = (
         <>
             <form onSubmit={e => e.preventDefault()}>
-                <ChooseStep currentStep={currentStep} setCurrentStep={setCurrentStep} next={_next}/>
-                <InfoStep currentStep={currentStep} setCurrentStep={setCurrentStep} next={_next} prev={_prev}/>
-                <ConfirmStep currentStep={currentStep} setCurrentStep={setCurrentStep} prev={_prev}/>
+                <ChooseStep currentStep={currentStep} next={next}/>
+                <InfoStep currentStep={currentStep} next={next} prev={prev}/>
+                <ConfirmStep currentStep={currentStep} setCurrentStep={setCurrentStep}/>
             </form>
         </>
     );

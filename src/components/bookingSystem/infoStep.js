@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Input from "../widgets/input";
@@ -7,12 +7,12 @@ import {shallowEqual, useDispatch, useSelector} from "react-redux";
 import {addBooking} from '../../actions/bookingAction';
 import {validateEmail} from '../../utils/snippets/stringSnippets';
 
-const previousButton = (currentStep, setCurrentStep, _prev) => {
+const previousButton = (currentStep, _prev) => {
     if (currentStep !== 1) {
         return (
             <div className='d-flex'>
                 <p className='changePrev text-decoration-underline'
-                   onClick={() => _prev(currentStep, setCurrentStep)}>
+                    onClick={() => _prev()}>
                     <span>{'<<'}</span>{'Change'}
                 </p>
             </div>
@@ -22,21 +22,21 @@ const previousButton = (currentStep, setCurrentStep, _prev) => {
 }
 
 
-const completePersonalInfo = (currentStep, setCurrentStep, _next, newBooking, dispatch) => {
+const completePersonalInfo = (_next, newBooking, dispatch) => {
     if (!_.isEmpty(newBooking.firstname) && !_.isEmpty(newBooking.lastname) && !_.isEmpty(newBooking.email)) {
         dispatch(addBooking(newBooking));
-        _next(currentStep, setCurrentStep);
+        _next()
     }
 }
 
 
-const nextButton = (currentStep, setCurrentStep, _next, newBooking, dispatch, errors) => {
+const nextButton = (currentStep, _next, newBooking, dispatch, errors) => {
     let isAvailable = !_.isEmpty(newBooking.firstname) && !_.isEmpty(newBooking.lastname) && !_.isEmpty(newBooking.email) && _.isEmpty(errors);
 
     if (currentStep < 3 && isAvailable) {
         return (
             <button className="step-btn btn btn-primary float-right" type="button"
-                    onClick={() => completePersonalInfo(currentStep, setCurrentStep, _next, newBooking, dispatch)}>
+                    onClick={() => completePersonalInfo(_next, newBooking, dispatch)}>
                 Complete Appointment<span>>></span>
             </button>
         )
@@ -58,6 +58,7 @@ const InfoStep = props => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
 
+    const newBookingReduxMemo = useMemo(() => newBookingRedux, [newBookingRedux]);
 
     useEffect(() => {
         if (!_.isEmpty(email)) {
@@ -67,16 +68,15 @@ const InfoStep = props => {
     }, [email])
 
     useEffect(() => {
-        if (newBookingRedux.result === 'another') {
+        if (newBookingReduxMemo.result === 'another') {
             setFirstname('');
             setLastname('');
             setPhone('');
             setEmail('');
         }
-    },[newBookingRedux])
+    },[newBookingReduxMemo])
 
     if (props.currentStep !== 2) return null;
-    // console.log(firstname, lastname, phone, email)
 
     const newBooking = {
         appointment: newBookingRedux.data.appointment,
@@ -129,15 +129,15 @@ const InfoStep = props => {
 
     return (
         <>
-            <div className='w-100 text-start mt-4 mb-4'>
+            <div className='w-100 text-start mt-5 mb-4'>
                 <p className='chooseInfo'>{`${newBookingRedux.data.appointment} ${newBookingRedux.data.date} ${newBookingRedux.data.time}`}</p>
-                {previousButton(props.currentStep, props.setCurrentStep, props.prev)}
+                {previousButton(props.currentStep, props.prev)}
             </div>
 
             {form}
 
             <div className='w-100 text-start mt-4 mb-4'>
-                {nextButton(props.currentStep, props.setCurrentStep, props.next, newBooking, dispatch, errors)}
+                {nextButton(props.currentStep, props.next, newBooking, dispatch, errors)}
             </div>
         </>
 
@@ -146,7 +146,6 @@ const InfoStep = props => {
 
 InfoStep.propTypes = {
     currentStep: PropTypes.number.isRequired,
-    setCurrentStep: PropTypes.func.isRequired,
     next: PropTypes.func.isRequired,
     prev: PropTypes.func.isRequired
 };

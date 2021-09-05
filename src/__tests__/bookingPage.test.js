@@ -2,17 +2,37 @@ import {cleanup, render, screen} from '@testing-library/react';  // testing-libr
 import renderer from 'react-test-renderer';
 import React from 'react';
 import BookingPage from "../components/bookingSystem/bookingPage";
+import {Provider} from "react-redux";
+import createSagaMiddleware from "redux-saga";
+import {applyMiddleware, createStore} from "redux";
+import rootReducer from "../reducers";
+import {composeWithDevTools} from "redux-devtools-extension";
+import logger from "redux-logger";
+import rootSage from "../sagas";
 
 const AppWrapper = () => {
 
+    const sagaMiddleware = createSagaMiddleware();
+    const store = createStore(
+        rootReducer,
+        composeWithDevTools(
+            applyMiddleware(sagaMiddleware, logger)
+        )
+    );
+    sagaMiddleware.run(rootSage);
+
     return (
-        <BookingPage/>
+        <Provider store={store}>
+            <BookingPage/>
+        </Provider>
     )
 }
+
 
 afterEach(() => {
     cleanup();
 });
+
 
 describe('App group:', () => {
     // test 1
