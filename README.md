@@ -26,7 +26,7 @@ TODO: Fill out this long description.
 
 Download from gitHub:
 ```
-$ git https://github.com/Qinchengqiang/veyor-wellness.git booking-app
+$ git clone https://github.com/Qinchengqiang/veyor-wellness.git booking-app
 ```
 
 ## Deploy 
