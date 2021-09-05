@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery';
 import "popper.js";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import axios from "axios";
 
 // font
 import '@fontsource/roboto';
@@ -43,11 +44,10 @@ const store = createStore(
 sagaMiddleware.run(rootSage);
 
 
-// jwt token setting with initial user info from /constants/key.js
-// if (localStorage.jwtToken) {
-//     setAxiosAuth(user);
-//     store.dispatch(setCurrentUser(user));
-// }
+// axios default baseURL
+if (process.env.NODE_ENV === "production") {
+    axios.defaults.baseURL = "http://localhost:3005";
+}
 
 ReactDOM.render(
   <React.StrictMode>
