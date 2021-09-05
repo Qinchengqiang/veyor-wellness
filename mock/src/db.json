@@ -17,7 +17,6 @@
     }
   ],
   "booking": [
-
     {
       "id": "d83fb4f874a2a4da50079103fd8b32fc",
       "appointment": "Physiotherapy",
@@ -56,6 +55,26 @@
       "firstname": "Steven Qin",
       "lastname": "Steven Qin",
       "phone": "+61410851598",
+      "email": "steven.qin90@gmail.com"
+    },
+    {
+      "id": "9de818b0c79fe247f365a2e475bfd34a",
+      "appointment": "Aroma Therapy",
+      "date": "07/09/2021",
+      "time": "3:00pm",
+      "firstname": "Steven ",
+      "lastname": "Qin",
+      "phone": "410851598",
+      "email": "steven.qin90@gmail.com"
+    },
+    {
+      "id": "8c8690cb6e6c13c7dca834276890f469",
+      "appointment": "Chiro",
+      "date": "07/09/2021",
+      "time": "4:00pm",
+      "firstname": "Steven",
+      "lastname": "Qin",
+      "phone": "0410851598",
       "email": "steven.qin90@gmail.com"
     }
   ]

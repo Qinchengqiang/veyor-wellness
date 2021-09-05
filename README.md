@@ -11,8 +11,8 @@ TODO: Fill out this long description.
 
 - [Security](#security)
 - [Background](#background)
-- [Install](#install)
-- [Usage](#usage)
+- [Download](#download)
+- [Deploy ](#deploy)
 - [API](#api)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
@@ -22,12 +22,15 @@ TODO: Fill out this long description.
 
 ## Background
 
-## Install
+## Download 
 
+Download from gitHub:
 ```
+$ git https://github.com/Qinchengqiang/veyor-wellness.git booking-app
 ```
 
-## Usage
+## Deploy 
+
 
 ```
 ```
