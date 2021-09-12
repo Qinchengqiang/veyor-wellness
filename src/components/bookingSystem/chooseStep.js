@@ -107,8 +107,6 @@ const ChooseStep = props => {
     }, [startDate, bookedDates, allBookingsRedux])
 
 
-    if (props.currentStep !== 1) return null;
-
     const isFiltered = (date) => {
         let res = true;
         const day = date.getDay();
@@ -133,7 +131,7 @@ const ChooseStep = props => {
         </div>
     )
 
-
+    if (props.currentStep !== 1) return null;
     const datePicking = (
         <>
             <Dropdown className='choose-dropdown w-100 mt-5'>

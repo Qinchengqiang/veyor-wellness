@@ -96,4 +96,4 @@ export const stringToInteger = (str) => parseInt(str);
  * @param email     string
  * @returns {boolean}
  */
-export const validateEmail = (email) => /\S+@\S+\.\S+/.test(String(email));
+export const validateEmail = (email) => /\S+@\S+\.\S+/.test(email.toString());

@@ -62,8 +62,6 @@ const ConfirmStep = props => {
         if (newBookingReduxMemo.result === 'reschedule' || newBookingReduxMemo.result === 'another') props.setCurrentStep(1);
     }, [newBookingReduxMemo, props])
 
-    if (props.currentStep !== 3) return null;
-
     const newBookingDay = getDayName(newBookingRedux.data.date);
     const newBookingMonth = getMonthName(newBookingRedux.data.date);
     const newBookingDayNum = parseInt(newBookingRedux.data.date.slice(0, 2));
@@ -85,6 +83,7 @@ const ConfirmStep = props => {
     const confirmationFail = (<h3>{newBookingRedux.result === 'false' ? 'Booking failed ...' : null} </h3>)
     const cancelResult = (<h3>{newBookingRedux.result === 'cancel' ? 'Appointment canceled.' : null} </h3>)
 
+    if (props.currentStep !== 3) return null;
     return (
         <div className='confirmation w-100 mt-5 text-start d-flex flex-row flex-wrap justify-content-between'>
 

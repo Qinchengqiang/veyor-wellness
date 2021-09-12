@@ -5,6 +5,11 @@ const months = [
     'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
+/**
+ *
+ * @param dmy_string    string (dd/mm/yyyy)
+ * @returns {string}    string (mm/dd/yyyy)
+ */
 const transformDateString = (dmy_string) => dmy_string.slice(3, 5) + '-' + dmy_string.slice(0, 2) + '-' + dmy_string.slice(6);
 
 
@@ -12,7 +17,7 @@ const transformDateString = (dmy_string) => dmy_string.slice(3, 5) + '-' + dmy_s
  *
  * @param dateString      dateString (dd/mm/yyyy)
  *
- * @returns
+ * @returns dayName/monthName   string
  */
 export const getDayName = (dateString) => days[new Date(transformDateString(dateString)).getDay()];
 

@@ -11,8 +11,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b49bd906-f9f3-4962-b326-f06bc73935ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/reducers/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/componentRequireAuthHOC.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mock/src/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/mock/src/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/chooseStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/chooseStep.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/confirmStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/confirmStep.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/infoStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/infoStep.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/widgets/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sagas/newBooking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/newBooking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/setAxiosAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/setAxiosAuth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/snippets/dateSnippets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/snippets/dateSnippets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/snippets/stringSnippets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/snippets/stringSnippets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,18 +55,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets/images/icons" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/constants" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/styles/bookingSystem" />
       <recent name="$PROJECT_DIR$/src/assets/images" />
       <recent name="$PROJECT_DIR$/src/components/bookingSystem" />
       <recent name="$PROJECT_DIR$/src/assets/styles" />
       <recent name="$PROJECT_DIR$/src/components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/images/icons" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/constants" />
     </key>
   </component>
   <component name="RunManager" selected="npm.mybuild">
@@ -99,6 +113,8 @@
       <workItem from="1630378507680" duration="11976000" />
       <workItem from="1630544539093" duration="55907000" />
       <workItem from="1630655320024" duration="91443000" />
+      <workItem from="1630907448530" duration="3480000" />
+      <workItem from="1631114618973" duration="7047000" />
     </task>
     <task id="LOCAL-00001" summary="launching setting">
       <created>1628664594177</created>
@@ -377,11 +393,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="eddit README.md" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="3554" y="534" key="#ESLint" timestamp="1630813921930">
+    <state x="3554" y="534" key="#ESLint" timestamp="1631457021768">
       <screen x="1440" y="-211" width="3008" height="1692" />
     </state>
     <state x="-894" y="745" key="#ESLint/0.0.1440.900/-3008.0.3008.1692@-3008.0.3008.1692" timestamp="1630303847935" />
-    <state x="3554" y="534" key="#ESLint/0.0.1440.900/1440.-211.3008.1692@1440.-211.3008.1692" timestamp="1630813921930" />
+    <state x="3554" y="534" key="#ESLint/0.0.1440.900/1440.-211.3008.1692@1440.-211.3008.1692" timestamp="1631457021768" />
     <state x="3193" y="580" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1629802946353">
       <screen x="1440" y="23" width="3008" height="1669" />
     </state>

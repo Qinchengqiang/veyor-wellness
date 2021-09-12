@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-// import {user} from "./constants/users";
-// import {setCurrentUser} from "./actions/loginAction";
-// import setAxiosAuth from "./utils/setAxiosAuth";
 
 // bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -47,6 +44,7 @@ sagaMiddleware.run(rootSage);
 // axios default baseURL
 if (process.env.NODE_ENV === "production") {
     axios.defaults.baseURL = "http://localhost:3005";
+    axios.defaults.timeout = 1000*5;
 }
 
 ReactDOM.render(

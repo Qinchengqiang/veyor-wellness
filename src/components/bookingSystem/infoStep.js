@@ -7,6 +7,7 @@ import {shallowEqual, useDispatch, useSelector} from "react-redux";
 import {addBooking} from '../../actions/bookingAction';
 import {validateEmail} from '../../utils/snippets/stringSnippets';
 
+
 const previousButton = (currentStep, _prev) => {
     if (currentStep !== 1) {
         return (
@@ -76,7 +77,6 @@ const InfoStep = props => {
         }
     },[newBookingReduxMemo])
 
-    if (props.currentStep !== 2) return null;
 
     const newBooking = {
         appointment: newBookingRedux.data.appointment,
@@ -127,6 +127,7 @@ const InfoStep = props => {
         </div>
     );
 
+    if (props.currentStep !== 2) return null;
     return (
         <>
             <div className='w-100 text-start mt-5 mb-4'>

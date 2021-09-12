@@ -36,7 +36,8 @@ Input.propTypes = {
     input: PropTypes.string.isRequired,
     setInput: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired,
-    setErrors: PropTypes.func.isRequired
+    setErrors: PropTypes.func.isRequired,
+    name: PropTypes.string.isRequired,
 };
 
 
