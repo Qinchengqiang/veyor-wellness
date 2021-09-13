@@ -9,25 +9,9 @@ import CryptoJS from 'crypto-js';
 import {key} from '../constants/key';
 
 
-// function to wrap async-await axios
-const postNewBookingAxios = async (body) => {
-    try {
-        const res = await axios.post('/booking', body);
-        return {res: true, data: res.data};
-    } catch (error) {
-        return {res: false, data: error};
-    }
-};
-
-
-const cancelBookingAxios = async (id) => {
-    try {
-        const res = await axios.delete('/booking/' + id);
-        return {res: true, data: res.data};
-    } catch (error) {
-        return {res: false, data: error};
-    }
-}
+// function to wrap axios
+const postNewBookingAxios = (body) => axios.post('/booking', body);
+const cancelBookingAxios = (id) => axios.delete('/booking/' + id);
 
 
 function* addBooking(action) {
@@ -38,7 +22,7 @@ function* addBooking(action) {
         const payload = {id: id, ...action.newBooking};
         const result = yield call(postNewBookingAxios, payload);
 
-        if (result.res) {
+        if (result.status === 201) {
             const newBooking = {result: 'success', error: null, data: payload}
             yield put({type: SET_NEW_BOOKING, newBooking: newBooking})
         } else {
@@ -58,7 +42,7 @@ function* cancelBooking(action) {
     try {
         const bookingId = action.id;
         const result = yield call(cancelBookingAxios, bookingId);
-        if (result.res) yield put({type: CANCEL_BOOKING})
+        if (result.status === 200) yield put({type: CANCEL_BOOKING})
     } catch (e) {
         console.log(e)
     }
@@ -68,7 +52,7 @@ function* RescheduleBooking(action) {
     try {
         const bookingId = action.id;
         const result = yield call(cancelBookingAxios, bookingId);
-        if (result.res) yield put({type: RESCHEDULE_BOOKING})
+        if (result.status === 200) yield put({type: RESCHEDULE_BOOKING})
     } catch (e) {
         console.log(e)
     }
