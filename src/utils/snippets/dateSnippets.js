@@ -7,15 +7,15 @@ const months = [
 
 /**
  *
- * @param dmy_string    string (dd/mm/yyyy)
- * @returns {string}    string (yyyy-mm-dd/)
+ * @param dmy_string    string (dd/MM/yyyy)
+ * @returns {string}    string (yyyy-MM-dd)
  */
 export const transformDateString = (dmy_string) => dmy_string.slice(6) + '-' + dmy_string.slice(3, 5) + '-' + dmy_string.slice(0, 2) ;
 
 
 /**
  *
- * @param dateString      dateString (dd/mm/yyyy)
+ * @param dateString      dateString (dd/MM/yyyy)
  *
  * @returns dayName/monthName   string
  */
@@ -48,7 +48,10 @@ export const isTodayTimePassed = (timeString) => {
     let time;
 
     if (timeString.slice(timeString.length - 2, timeString.length) === 'am') time = [parseInt(timeString.split(':')[0]), parseInt(timeString.split(':')[1].slice(0, 3))];
-    if (timeString.slice(timeString.length - 2, timeString.length) === 'pm') time = [parseInt(timeString.split(':')[0])+12, parseInt(timeString.split(':')[1].slice(0, 3))];
+    if (timeString.slice(timeString.length - 2, timeString.length) === 'pm') {
+        if (parseInt(timeString.split(':')[0]) === 12) time = [12, parseInt(timeString.split(':')[1].slice(0, 3))];
+        else time = [parseInt(timeString.split(':')[0])+12, parseInt(timeString.split(':')[1].slice(0, 3))];
+    }
 
     if (time[0] < new Date().getHours()) return true;
     return time[0] === new Date().getHours() && time[1] < new Date().getMinutes();

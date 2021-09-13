@@ -32,39 +32,9 @@
       "appointment": "Physiotherapy",
       "date": "14/09/2021",
       "time": "10:00am",
-      "firstname": "sad",
-      "lastname": "saves",
-      "phone": "",
-      "email": "steven.qin90@gmail.com"
-    },
-    {
-      "id": "433e53c426881afbbaad307cbcb0634e",
-      "appointment": "Physiotherapy",
-      "date": "14/09/2021",
-      "time": "3:00pm",
-      "firstname": "aef",
-      "lastname": "aef",
-      "phone": "",
-      "email": "steven.qin90@gmail.com"
-    },
-    {
-      "id": "35947800466da5b7d746360a939df3c7",
-      "appointment": "Physiotherapy",
-      "date": "14/09/2021",
-      "time": "4:00pm",
-      "firstname": "sdvf",
-      "lastname": "adf",
-      "phone": "",
-      "email": "steven.qin90@gmail.com"
-    },
-    {
-      "id": "f454fd81bc82d27f0d1f4e9875a4abd1",
-      "appointment": "Chiro",
-      "date": "14/09/2021",
-      "time": "12:00pm",
-      "firstname": "Steven Qi",
-      "lastname": "Qin",
-      "phone": "410851598",
+      "firstname": "Steven",
+      "lastname": "Steven",
+      "phone": "0410851598",
       "email": "steven.qin90@gmail.com"
     }
   ]
