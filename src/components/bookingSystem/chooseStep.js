@@ -8,7 +8,7 @@ import Down from 'bootstrap-icons/icons/chevron-compact-down.svg';
 import DatePicker from 'react-datepicker';
 import {shallowEqual, useDispatch, useSelector} from "react-redux";
 import {chooseAppointment} from '../../actions/bookingAction';
-import {isFirstDateLarge, twoDatesEqual, isTodayTimePassed} from '../../utils/snippets/dateSnippets';
+import {isFirstDateLarge, twoDatesEqual, isTodayTimePassed, transformDateString} from '../../utils/snippets/dateSnippets';
 
 
 const completeChooseAppointment = (_next, dispatch, chooseData) => {
@@ -42,10 +42,10 @@ const nextButton = (currentStep, _next, isDisabled, dispatch, chooseData) => {
 
 
 const filterBookedDate = (allBookings) => {
-    const curDate = new Date(new Date().toLocaleDateString());
+    const curDate = new Date(transformDateString(new Date().toLocaleDateString()));
     let futureBookings = new Map();
     allBookings.forEach(booking => {
-        let dt = new Date(booking.date);
+        let dt = new Date(transformDateString(booking.date));
         if (dt >= curDate && !futureBookings.has(booking.date)) futureBookings.set(booking.date, 1);
     })
     return futureBookings
@@ -74,7 +74,6 @@ const ChooseStep = props => {
     useEffect(() => {
         setAppointmentList(appointmentsReduxMemo.data)
     }, [appointmentsReduxMemo]);
-
 
     useEffect(() => {
         if (newBookingReduxMemo.result === 'another') {
@@ -105,7 +104,6 @@ const ChooseStep = props => {
             setTime(new Map())
         }
     }, [startDate, bookedDates, allBookingsRedux])
-
 
     const isFiltered = (date) => {
         let res = true;

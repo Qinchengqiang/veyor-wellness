@@ -11,22 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b49bd906-f9f3-4962-b326-f06bc73935ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/reducers/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/componentRequireAuthHOC.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mock/src/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/mock/src/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/chooseStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/chooseStep.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/confirmStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/confirmStep.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/bookingSystem/infoStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bookingSystem/infoStep.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/widgets/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/newBooking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/newBooking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/setAxiosAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/setAxiosAuth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/snippets/dateSnippets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/snippets/dateSnippets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/snippets/stringSnippets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/snippets/stringSnippets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +102,8 @@
       <workItem from="1630544539093" duration="55907000" />
       <workItem from="1630655320024" duration="91443000" />
       <workItem from="1630907448530" duration="3480000" />
-      <workItem from="1631114618973" duration="7047000" />
+      <workItem from="1631114618973" duration="8935000" />
+      <workItem from="1631491633785" duration="6708000" />
     </task>
     <task id="LOCAL-00001" summary="launching setting">
       <created>1628664594177</created>
@@ -347,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630821055193</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="update">
+      <created>1631457825965</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1631457825965</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +369,6 @@
     <MESSAGE value="redux-saga" />
     <MESSAGE value="redux-saga update" />
     <MESSAGE value="update jest test" />
-    <MESSAGE value="update" />
     <MESSAGE value="add snippets" />
     <MESSAGE value="init" />
     <MESSAGE value="update README.md" />
@@ -390,7 +385,8 @@
     <MESSAGE value="useCallback and useMemo for updating performance" />
     <MESSAGE value="deployment setting" />
     <MESSAGE value="eddit README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="eddit README.md" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="3554" y="534" key="#ESLint" timestamp="1631457021768">
