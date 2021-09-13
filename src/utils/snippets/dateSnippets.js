@@ -8,9 +8,9 @@ const months = [
 /**
  *
  * @param dmy_string    string (dd/mm/yyyy)
- * @returns {string}    string (mm/dd/yyyy)
+ * @returns {string}    string (yyyy-mm-dd/)
  */
-export const transformDateString = (dmy_string) => dmy_string.slice(3, 5) + '-' + dmy_string.slice(0, 2) + '-' + dmy_string.slice(6);
+export const transformDateString = (dmy_string) => dmy_string.slice(6) + '-' + dmy_string.slice(3, 5) + '-' + dmy_string.slice(0, 2) ;
 
 
 /**

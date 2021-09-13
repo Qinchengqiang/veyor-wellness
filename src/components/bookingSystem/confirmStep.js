@@ -62,6 +62,8 @@ const ConfirmStep = props => {
         if (newBookingReduxMemo.result === 'reschedule' || newBookingReduxMemo.result === 'another') props.setCurrentStep(1);
     }, [newBookingReduxMemo, props])
 
+    console.log(getDayName(newBookingRedux.data.date))
+
     const newBookingDay = getDayName(newBookingRedux.data.date);
     const newBookingMonth = getMonthName(newBookingRedux.data.date);
     const newBookingDayNum = parseInt(newBookingRedux.data.date.slice(0, 2));
